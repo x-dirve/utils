@@ -57,7 +57,7 @@ export function isUndefined(subject: any) {
 }
 
 /**
- * 是否 undefined
+ * 是否是函数
  * @param  subject 待判断的数据
  */
 export function isFunction(subject: any) {

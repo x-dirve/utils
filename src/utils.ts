@@ -9,10 +9,10 @@ export { labelReplaceExp }
 
 /**
  * 批量替换字符串中带花括号标签为指定数据
- * @param  {String}  tpl  待处理的字符串
- * @param  {Mix}     data 替换数据
- * @param  {Boolean} keep 是否保留未能解析的标签
- * @return {String}       替换后端字符串
+ * @param  tpl  待处理的字符串
+ * @param  data 替换数据
+ * @param  keep 是否保留未能解析的标签
+ * @return      替换后端字符串
  * @example
  * ```tsx
  * labelReplace('{a}/{b}/c', {a: 1, b: 2}) // 1/2/c
@@ -41,8 +41,8 @@ export function isValidArray(subject: any): boolean {
 
 /**
  * 伪数组转成数组
- * @param  {Object} args 伪数组对象
- * @return {Array}       转化后的数组
+ * @param   args 伪数组对象
+ * @return       转化后的数组
  */
 export function toArray<T>(args: T[]): Array<T> {
     return Array.prototype.slice.call(args)
@@ -50,9 +50,9 @@ export function toArray<T>(args: T[]): Array<T> {
 
 /**
  * 通用遍历函数
- * @param  {Mix}      data    待遍历数据
- * @param  {Function} handler 处理函数
- * @param  {Object}   context 作用域
+ * @param  data    待遍历数据
+ * @param  handler 处理函数
+ * @param  context 作用域
  */
 export function each<T>(data: T[] | object, handler: Function, context?: object): void {
     context = context || this
@@ -83,14 +83,13 @@ export function each<T>(data: T[] | object, handler: Function, context?: object)
 
 /**
  * 大写字母匹配正则
- * @type {RegExp}
  */
 const UPPER_CASE_REGEXP: RegExp = /[A-Z]/g
 
 /**
  * 转化为蛇形命名
- * @param  {String} str 待处理的字符串
- * @return {String}     处理后的字符串
+ * @param  str 待处理的字符串
+ * @return     处理后的字符串
  */
 export function toUnderlineName(str: string): string {
     if (isString(str)) {
@@ -101,8 +100,8 @@ export function toUnderlineName(str: string): string {
 
 /**
  * 简单复制
- * @param  {Object} item 原始数据
- * @return {Object}      复制后的数据
+ * @param  item 原始数据
+ * @return      复制后的数据
  */
 export function copy<T>(item: T): T {
     return JSON.parse(JSON.stringify(item))
@@ -110,9 +109,9 @@ export function copy<T>(item: T): T {
 
 /**
  * 格式化数字, 自动补0前续
- * @param  {Number} number 要格式化的数字
- * @param  {Number} size   格式化后出来的数字位数
- * @return {String}        格式化结果
+ * @param  number 要格式化的数字
+ * @param  size   格式化后出来的数字位数
+ * @return        格式化结果
  */
 export function fix0(number, size: number): string {
     number = number.toString()
@@ -124,8 +123,8 @@ export function fix0(number, size: number): string {
 
 /**
  * 数组随机分布
- * @param  {Array} arr  原始数组
- * @return {Array}      打乱后的数组
+ * @param  arr  原始数组
+ * @return      打乱后的数组
  */
 export function shuffle<T>(arr: T[]): T[] {
     for (let i = arr.length - 1; i >= 0; i--) {
@@ -139,9 +138,9 @@ export function shuffle<T>(arr: T[]): T[] {
 
 /**
  * 获取包含指定范围内的随机数
- * @param  {Number} max 最大范围(包含)
- * @param  {Number} min 最小范围(包含，默认 0)
- * @return {Number}     随机数
+ * @param  max 最大范围(包含)
+ * @param  min 最小范围(包含，默认 0)
+ * @return     随机数
  */
 export function random(max: number, min: number): number {
     if (min === undefined) {
@@ -152,8 +151,8 @@ export function random(max: number, min: number): number {
 
 /**
  * 序列化请求参数
- * @param  {Object} query 参数对象
- * @return {String}       参数字符串
+ * @param  query 参数对象
+ * @return       参数字符串
  */
 export function serialize(query: object, encode: boolean = false): string {
     return Object.keys(query)
@@ -163,7 +162,7 @@ export function serialize(query: object, encode: boolean = false): string {
 
 /**
  * 对象扩展方法
- * @return {Object} 合并后的对象
+ * @return 合并后的对象
  */
 export function extend() {
     var args: any[] = A_SLICE.call(arguments)
@@ -215,8 +214,7 @@ export function merge(target: object, ...sources: any[]) {
 
 /**
  * 请求参数对象转成请求参数字符串
- * @param {Object} dat 请求参数
- * @return {String}
+ * @param dat 请求参数
  */
 export function queryString(dat: object): string {
     let queryStr: string
