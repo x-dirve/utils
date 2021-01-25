@@ -22,11 +22,9 @@
         "src"
     ],
     "exclude": [
-        "__tests__",
         "node_modules",
         "dist",
-        "tests",
-        "jest",
+        "test",
         "**/*.test.ts",
         "**/*.spec.ts"
     ],

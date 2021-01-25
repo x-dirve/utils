@@ -1,9 +1,6 @@
-deploy_versions/
 .temp/
-.rn_temp/
 .DS_Store
 node_modules
-/dist
 
 package-lock.json
 
