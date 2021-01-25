@@ -28,7 +28,7 @@ const esmConfig = Object.assign({}, baseConfig, {
     output: Object.assign({}, baseConfig.output, {
         sourcemap: true,
         format: "es",
-        file: join(cwd, "dist/shared.esm.js")
+        file: join(cwd, "dist/index.esm.js")
     }),
     plugins: [
         typescript()
