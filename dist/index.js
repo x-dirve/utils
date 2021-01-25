@@ -54,7 +54,7 @@ function isUndefined(subject) {
     return is(subject, "undefined");
 }
 /**
- * 是否 undefined
+ * 是否是函数
  * @param  subject 待判断的数据
  */
 function isFunction(subject) {
@@ -89,10 +89,10 @@ function isRegexp(subject) {
 var labelReplaceExp = /\{(\w+)\}/g;
 /**
  * 批量替换字符串中带花括号标签为指定数据
- * @param  {String}  tpl  待处理的字符串
- * @param  {Mix}     data 替换数据
- * @param  {Boolean} keep 是否保留未能解析的标签
- * @return {String}       替换后端字符串
+ * @param  tpl  待处理的字符串
+ * @param  data 替换数据
+ * @param  keep 是否保留未能解析的标签
+ * @return      替换后端字符串
  * @example
  * ```tsx
  * labelReplace('{a}/{b}/c', {a: 1, b: 2}) // 1/2/c
@@ -120,17 +120,17 @@ function isValidArray(subject) {
 }
 /**
  * 伪数组转成数组
- * @param  {Object} args 伪数组对象
- * @return {Array}       转化后的数组
+ * @param   args 伪数组对象
+ * @return       转化后的数组
  */
 function toArray(args) {
     return Array.prototype.slice.call(args);
 }
 /**
  * 通用遍历函数
- * @param  {Mix}      data    待遍历数据
- * @param  {Function} handler 处理函数
- * @param  {Object}   context 作用域
+ * @param  data    待遍历数据
+ * @param  handler 处理函数
+ * @param  context 作用域
  */
 function each(data, handler, context) {
     context = context || this;
@@ -161,13 +161,12 @@ function each(data, handler, context) {
 }
 /**
  * 大写字母匹配正则
- * @type {RegExp}
  */
 var UPPER_CASE_REGEXP = /[A-Z]/g;
 /**
  * 转化为蛇形命名
- * @param  {String} str 待处理的字符串
- * @return {String}     处理后的字符串
+ * @param  str 待处理的字符串
+ * @return     处理后的字符串
  */
 function toUnderlineName(str) {
     if (isString(str)) {
@@ -177,17 +176,17 @@ function toUnderlineName(str) {
 }
 /**
  * 简单复制
- * @param  {Object} item 原始数据
- * @return {Object}      复制后的数据
+ * @param  item 原始数据
+ * @return      复制后的数据
  */
 function copy(item) {
     return JSON.parse(JSON.stringify(item));
 }
 /**
  * 格式化数字, 自动补0前续
- * @param  {Number} number 要格式化的数字
- * @param  {Number} size   格式化后出来的数字位数
- * @return {String}        格式化结果
+ * @param  number 要格式化的数字
+ * @param  size   格式化后出来的数字位数
+ * @return        格式化结果
  */
 function fix0(number, size) {
     number = number.toString();
@@ -198,8 +197,8 @@ function fix0(number, size) {
 }
 /**
  * 数组随机分布
- * @param  {Array} arr  原始数组
- * @return {Array}      打乱后的数组
+ * @param  arr  原始数组
+ * @return      打乱后的数组
  */
 function shuffle(arr) {
     for (var i = arr.length - 1; i >= 0; i--) {
@@ -212,9 +211,9 @@ function shuffle(arr) {
 }
 /**
  * 获取包含指定范围内的随机数
- * @param  {Number} max 最大范围(包含)
- * @param  {Number} min 最小范围(包含，默认 0)
- * @return {Number}     随机数
+ * @param  max 最大范围(包含)
+ * @param  min 最小范围(包含，默认 0)
+ * @return     随机数
  */
 function random(max, min) {
     if (min === undefined) {
@@ -224,8 +223,8 @@ function random(max, min) {
 }
 /**
  * 序列化请求参数
- * @param  {Object} query 参数对象
- * @return {String}       参数字符串
+ * @param  query 参数对象
+ * @return       参数字符串
  */
 function serialize(query, encode) {
     if ( encode === void 0 ) encode = false;
@@ -236,7 +235,7 @@ function serialize(query, encode) {
 }
 /**
  * 对象扩展方法
- * @return {Object} 合并后的对象
+ * @return 合并后的对象
  */
 function extend() {
     var args = A_SLICE.call(arguments);
@@ -286,8 +285,7 @@ function merge(target) {
 }
 /**
  * 请求参数对象转成请求参数字符串
- * @param {Object} dat 请求参数
- * @return {String}
+ * @param dat 请求参数
  */
 function queryString(dat) {
     var queryStr;
