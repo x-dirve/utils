@@ -243,7 +243,7 @@ const date_regx = /[^\d]+/;
  * @param   offset 修正偏移的秒数
  * @return         返回JS Date对象 / NULL 日期格式错误
  */
-export function toDate(date, offset?: number): Date | null {
+export function toDate(date, offset?: number) {
     let ts;
     if (date instanceof Date) {
         ts = date;
@@ -299,7 +299,6 @@ export function date(date, format?: string, offset?: number): string {
     if (timestamp === null) {
         timestamp = new Date();
     }
-    // @ts-ignore
     return format.replace(format_exp, function format_callback(tag: string) {
         switch (tag) {
             case "Y": return timestamp.getFullYear();
