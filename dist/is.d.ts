@@ -36,7 +36,7 @@ export declare function isNumber(subject: any): boolean;
  */
 export declare function isUndefined(subject: any): boolean;
 /**
- * 是否 undefined
+ * 是否函数
  * @param  subject 待判断的数据
  */
 export declare function isFunction(subject: any): boolean;
