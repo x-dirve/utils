@@ -82,7 +82,7 @@ function isRegexp(subject) {
  * 带花括号标签检测正则
  * @type {RegExp}
  */
-const labelReplaceExp = /\{(\w+)\}/g;
+var labelReplaceExp = /\{(\w+)\}/g;
 /**
  * 批量替换字符串中带花括号标签为指定数据
  * @param  tpl  待处理的字符串
@@ -95,16 +95,18 @@ const labelReplaceExp = /\{(\w+)\}/g;
  * labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
  * ```
  */
-function labelReplace(tpl, data, keep = false) {
+function labelReplace(tpl, data, keep) {
+    if ( keep === void 0 ) keep = false;
+
     return tpl.replace(labelReplaceExp, function (_, key) {
-        const re = isObject(data) ? data[key] : data;
+        var re = isObject(data) ? data[key] : data;
         if (isUndefined(re) && keep) {
             return _;
         }
         return re;
     });
 }
-const A_SLICE = Array.prototype.slice;
+var A_SLICE = Array.prototype.slice;
 /**
  * 是否是数组且长度大于0
  * @param  subject 待判断的数据
@@ -130,8 +132,8 @@ function each(data, handler, context) {
     context = context || this;
     var hasHandler = isFunction(handler);
     if (isArray(data)) {
-        for (let i = 0; i < data.length; i++) {
-            let re = true;
+        for (var i = 0; i < data.length; i++) {
+            var re = true;
             if (hasHandler) {
                 re = handler.call(context, data[i], i);
             }
@@ -141,13 +143,13 @@ function each(data, handler, context) {
         }
     }
     else if (isObject(data)) {
-        const keys = Object.keys(data);
-        for (let i = 0; i < keys.length; i++) {
-            let re = true;
+        var keys = Object.keys(data);
+        for (var i$1 = 0; i$1 < keys.length; i$1++) {
+            var re$1 = true;
             if (hasHandler) {
-                re = handler.call(context, data[keys[i]], keys[i]);
+                re$1 = handler.call(context, data[keys[i$1]], keys[i$1]);
             }
-            if (re === false) {
+            if (re$1 === false) {
                 break;
             }
         }
@@ -156,7 +158,7 @@ function each(data, handler, context) {
 /**
  * 大写字母匹配正则
  */
-const UPPER_CASE_REGEXP = /[A-Z]/g;
+var UPPER_CASE_REGEXP = /[A-Z]/g;
 /**
  * 转化为蛇形命名
  * @param  str 待处理的字符串
@@ -164,7 +166,7 @@ const UPPER_CASE_REGEXP = /[A-Z]/g;
  */
 function toUnderlineName(str) {
     if (isString(str)) {
-        return str.replace(UPPER_CASE_REGEXP, (m, i) => `${i ? '_' : ''}${m.toLowerCase()}`);
+        return str.replace(UPPER_CASE_REGEXP, function (m, i) { return ("" + (i ? '_' : '') + (m.toLowerCase())); });
     }
     return str;
 }
@@ -195,9 +197,9 @@ function fix0(number, size) {
  * @return      打乱后的数组
  */
 function shuffle(arr) {
-    for (let i = arr.length - 1; i >= 0; i--) {
-        const rIndex = Math.floor(Math.random() * (i + 1));
-        const item = arr[rIndex];
+    for (var i = arr.length - 1; i >= 0; i--) {
+        var rIndex = Math.floor(Math.random() * (i + 1));
+        var item = arr[rIndex];
         arr[rIndex] = arr[i];
         arr[i] = item;
     }
@@ -220,9 +222,11 @@ function random(max, min) {
  * @param  query 参数对象
  * @return       参数字符串
  */
-function serialize(query, encode = false) {
+function serialize(query, encode) {
+    if ( encode === void 0 ) encode = false;
+
     return Object.keys(query)
-        .map(key => `${key}=${encode ? encodeURIComponent(query[key]) : query[key]}`)
+        .map(function (key) { return (key + "=" + (encode ? encodeURIComponent(query[key]) : query[key])); })
         .join('&');
 }
 /**
@@ -235,7 +239,7 @@ function extend() {
     if (dat) {
         if (args.length) {
             while (args.length) {
-                const item = args.shift();
+                var item = args.shift();
                 if (item) {
                     each(item, function (val, key) {
                         dat[key] = val;
@@ -252,37 +256,39 @@ function extend() {
  * @param target  合并基准对象
  * @param sources 后续合并对象
  */
-function merge(target, ...sources) {
+function merge(target) {
+    var obj, obj$1;
+
+    var sources = [], len = arguments.length - 1;
+    while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
     if (!sources.length)
-        return target;
-    const source = sources.shift();
+        { return target; }
+    var source = sources.shift();
     if (isObject(target) && isObject(source)) {
-        for (const key in source) {
+        for (var key in source) {
             if (isObject(source[key])) {
                 if (!target[key]) {
-                    Object.assign(target, { [key]: {} });
+                    Object.assign(target, ( obj = {}, obj[key] = {}, obj ));
                 }
                 merge(target[key], source[key]);
             }
             else {
-                Object.assign(target, {
-                    [key]: source[key]
-                });
+                Object.assign(target, ( obj$1 = {}, obj$1[key] = source[key], obj$1 ));
             }
         }
     }
-    return merge(target, ...sources);
+    return merge.apply(void 0, [ target ].concat( sources ));
 }
 /**
  * 请求参数对象转成请求参数字符串
  * @param dat 请求参数
  */
 function queryString(dat) {
-    let queryStr;
+    var queryStr;
     if (dat) {
         queryStr = Object.keys(dat)
-            .map(key => {
-            return `${key}=${encodeURIComponent(dat[key])}`;
+            .map(function (key) {
+            return (key + "=" + (encodeURIComponent(dat[key])));
         })
             .join('&');
     }
@@ -294,7 +300,7 @@ function queryString(dat) {
 /**
  * 时间分割正则
  */
-const date_regx = /[^\d]+/;
+var date_regx = /[^\d]+/;
 /**
  * 转换对象为JS Date对象
  * @param   date   <可选> 日期数据(时间戳, 字符串, Date对象, 空)
@@ -302,7 +308,7 @@ const date_regx = /[^\d]+/;
  * @return         返回JS Date对象 / NULL 日期格式错误
  */
 function toDate(date, offset) {
-    let ts;
+    var ts;
     if (date instanceof Date) {
         ts = date;
     }
@@ -345,7 +351,7 @@ function toDate(date, offset) {
 /**
  * 日期格式化格式匹配正则
  */
-const format_exp = /[YymndjNwaAghGHisT]/g;
+var format_exp = /[YymndjNwaAghGHisT]/g;
 /**
  * 按照指定格式将日期对象或时间戳转化为日期字符串
  * @param  date   日期对象或时间戳
@@ -355,7 +361,7 @@ const format_exp = /[YymndjNwaAghGHisT]/g;
  */
 function date(date, format, offset) {
     format = format || "Y-m-d H:i:s";
-    let timestamp = toDate(date, offset);
+    var timestamp = toDate(date, offset);
     if (timestamp === null) {
         timestamp = new Date();
     }

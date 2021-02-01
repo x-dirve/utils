@@ -1,5 +1,6 @@
 const { join } = require("path")
 const buble = require("rollup-plugin-buble")
+const babel = require("rollup-plugin-babel");
 const typescript = require("rollup-plugin-typescript2")
 const cwd = __dirname
 
@@ -32,12 +33,12 @@ const esmConfig = Object.assign({}, baseConfig, {
     }),
     plugins: [
         typescript()
+        , buble()
     ]
 })
 
 function rollup() {
     const target = process.env.TARGET
-
     if (target === "umd") {
         return baseConfig
     } else if (target === "esm") {
