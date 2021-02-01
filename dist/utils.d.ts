@@ -88,7 +88,9 @@ export declare function merge(target: object, ...sources: any[]): any;
  * 请求参数对象转成请求参数字符串
  * @param dat 请求参数
  */
-export declare function queryString(dat: object): string;
+export declare function queryString(dat: {
+    [key: string]: any;
+}): string;
 /**
  * 转换对象为JS Date对象
  * @param   date   <可选> 日期数据(时间戳, 字符串, Date对象, 空)
