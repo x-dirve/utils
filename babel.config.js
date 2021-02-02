@@ -15,7 +15,6 @@ module.exports = {
                 }
             }
         ],
-        "babel-preset-stage-2",
         "@babel/typescript"
     ],
     plugins: [

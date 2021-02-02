@@ -37,14 +37,49 @@ const esmConfig = Object.assign({}, baseConfig, {
     ]
 })
 
+
+const mathConfig = {
+    input: join(cwd, "src/math.ts"),
+    output: [
+        {
+            file: join(cwd, "dist/math.js"),
+            format: "cjs",
+            sourcemap: true,
+            exports: "named"
+        }
+    ],
+    plugins: [
+        typescript({
+            tsconfigOverride: {
+                compilerOptions: {
+                    preserveConstEnums: true
+                }
+            }
+        }),
+        buble()
+    ]
+}
+
+const mathEsmConfig = Object.assign({}, mathConfig, {
+    output: Object.assign({}, mathConfig.output, {
+        sourcemap: true,
+        format: "es",
+        file: join(cwd, "dist/math.esm.js")
+    }),
+    plugins: [
+        typescript()
+        , buble()
+    ]
+})
+
 function rollup() {
     const target = process.env.TARGET
     if (target === "umd") {
-        return baseConfig
+        return [baseConfig, mathConfig]
     } else if (target === "esm") {
-        return esmConfig
+        return [esmConfig, mathEsmConfig]
     } else {
-        return [baseConfig, esmConfig]
+        return [baseConfig, esmConfig, mathConfig, mathEsmConfig]
     }
 }
 module.exports = rollup()

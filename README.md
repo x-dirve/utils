@@ -167,3 +167,33 @@ __`date(date: any, format?: string, offset?: number): string`__
 - `date` 日期对象或时间戳
 - `format` 日期格式
 - `offset` 修正偏移的秒数
+
+## 数字相关
+
+__`getNumberWithDec(num: number, dec: number): number`__
+
+浮点数字精度处理
+- `num` 待处理数字
+- `dec` 精度
+
+
+__`gettNumberAverage(arr:number[], dec:number): number`__
+
+获取一组数组中的平均数
+- `arr` 待处理数组
+- `dec` 保留精度
+
+
+__`gettNumberVariance(arr:number[], dec:number): number`__
+
+按照指定格式将日期对象或时间戳转化为日期字符串
+- `arr` 待处理数组
+- `dec` 保留精度
+- `offset` 修正偏移的秒数
+
+
+__`getStdDeviation(arr:number[], dec:number): number`__
+
+按照指定格式将日期对象或时间戳转化为日期字符串
+- `arr` 待处理数组
+- `dec` 保留精度
