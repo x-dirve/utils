@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./is.js"),require("./isFunction.js"),require("./isObject.js"),require("./isArray.js");var e=require("./each.js"),r=require("./toArray.js");exports.extend=function(){var i=r.toArray(arguments),t=i.shift();if(t){if(i.length)for(;i.length;){var s=i.shift();s&&e.each(s,(function(e,r){t[r]=e}))}return t}return null};
+//# sourceMappingURL=extend.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"isValidArray.js","sources":["../../src/libs/isValidArray.ts"],"sourcesContent":["/**\n * 是否是数组且长度大于0\n * @param  subject 待判断的数据\n */\nexport function isValidArray(subject: any): boolean {\n    return Array.isArray(subject) && subject.length > 0;\n}"],"names":["subject","Array","isArray","length"],"mappings":"kGAI6BA,GACzB,OAAOC,MAAMC,QAAQF,IAAYA,EAAQG,OAAS"}

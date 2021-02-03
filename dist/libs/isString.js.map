@@ -1,0 +1,1 @@
+{"version":3,"file":"isString.js","sources":["../../src/libs/isString.ts"],"sourcesContent":["import is from \"./is\";\n/**\n * 是否是字符串\n * @param  subject 待判断的数据\n */\nexport function isString(subject: any) {\n    return is(subject, \"string\");\n}"],"names":["subject","is"],"mappings":"uHAKyBA,GACrB,OAAOC,UAAGD,EAAS"}

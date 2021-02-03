@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./is.js");var e=require("./isObject.js");exports.merge=function r(t){for(var i,s,c=[],n=arguments.length-1;n-- >0;)c[n]=arguments[n+1];if(!c.length)return t;var a=c.shift();if(e.isObject(t)&&e.isObject(a))for(var j in a)e.isObject(a[j])?(t[j]||Object.assign(t,((i={})[j]={},i)),r(t[j],a[j])):Object.assign(t,((s={})[j]=a[j],s));return r.apply(void 0,[t].concat(c))};
+//# sourceMappingURL=merge.js.map

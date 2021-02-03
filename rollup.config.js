@@ -1,49 +1,68 @@
 const { join } = require("path");
 const buble = require("rollup-plugin-buble");
 const typescript = require("rollup-plugin-typescript2");
+const { terser } = require("rollup-plugin-terser");
 const cwd = __dirname;
+const fs = require("fs");
 
-const baseConfig = {
-    "input": join(cwd, "src/index.ts")
-    ,"output": [
+const isProduction = process.env.NODE_ENV === 'production';
+
+console.log(process.env.NODE_ENV);
+
+const libPath = join(cwd, "src", "libs")
+const libFilesList = fs.readdirSync(libPath).map(file => join(libPath, file));
+
+const libConfig = {
+    "input": libFilesList
+    , "output": [
         {
-            "file": join(cwd, "dist/index.js")
-            ,"format": "cjs"
-            ,"sourcemap": true
-            ,"exports": "named"
+            "entryFileNames": "[name].js"
+            , "format": "cjs"
+            , "dir": join(cwd, "dist", "libs")
+            , "sourcemap": true
+            , "exports": "named"
         }
     ]
-    ,"plugins": [
+    , "plugins": [
         typescript({
             "tsconfigOverride": {
                 "compilerOptions": {
-                    "preserveConstEnums": true
+                    "declarationDir": "./dist"
                 }
             }
+            ,"objectHashIgnoreUnknownHack": true
+            , "useTsconfigDeclarationDir": true
         })
-        ,buble()
+        , buble()
+        , isProduction && terser()
     ]
 }
-const esmConfig = Object.assign({}, baseConfig, {
-    "output": Object.assign({}, baseConfig.output, {
-        "sourcemap": true
-        ,"format": "es"
-        ,"file": join(cwd, "dist/index.esm.js")
-    })
-    ,"plugins": [
-        typescript()
-        , buble()
+
+const indexConfig = {
+    "input": join(cwd, "src", "index.ts")
+    , "output": [
+        {
+            "file": join(cwd, "dist", "index.js")
+            , "format": "cjs"
+            , "sourcemap": true
+            , "exports": "named"
+        }
+        , {
+            "sourcemap": true
+            , "format": "es"
+            , "file": join(cwd, "dist/index.esm.js")
+        }
     ]
-})
+    , "plugins": [
+        typescript({
+            "objectHashIgnoreUnknownHack": true
+        })
+        , buble()
+        , isProduction && terser()
+    ]
+}
 
 function rollup() {
-    const target = process.env.TARGET;
-    if (target === "umd") {
-        return baseConfig;
-    } else if (target === "esm") {
-        return esmConfig;
-    } else {
-        return [baseConfig, esmConfig];
-    }
+    return [libConfig, indexConfig];
 }
 module.exports = rollup()

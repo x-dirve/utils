@@ -1,38 +1,31 @@
-export {
-    labelReplaceExp
-    ,labelReplace
-    ,isValidArray
-    ,toArray
-    ,each
-    ,extend
-    ,merge
-    ,toUnderlineName
-    ,copy
-    ,fix0
-    ,numberFormat
-    ,shuffle
-    ,random
-    ,serialize
-    ,queryString
-    ,toDate
-    ,date
-} from "./utils";
-export {
-    is
-    ,isUndefined
-    ,isString
-    ,isRegexp
-    ,isObject
-    ,isNumber
-    ,isNull
-    ,isFunction
-    ,isError
-    ,isBoolean
-    ,isArray
-} from "./is";
-export {
-    getNumberWithDec
-    ,gettNumberAverage
-    ,gettNumberVariance
-    ,getStdDeviation
-} from "./math";
+export { labelReplaceExp, labelReplace } from "./libs/labelReplace";
+export { isValidArray } from "./libs/isValidArray";
+export { toArray } from "./libs/toArray";
+export { each } from "./libs/each";
+export { extend } from "./libs/extend";
+export { merge } from "./libs/merge";
+export { toUnderlineName } from "./libs/toUnderlineName";
+export { copy } from "./libs/copy";
+export { fix0 } from "./libs/fix0";
+export { numberFormat } from "./libs/numberFormat";
+export { shuffle } from "./libs/shuffle";
+export { random } from "./libs/random";
+export { serialize } from "./libs/serialize";
+export { queryString } from "./libs/queryString";
+export { toDate } from "./libs/toDate";
+export { date } from "./libs/date";
+export { default as is } from "./libs/is";
+export { isUndefined } from "./libs/isUndefined";
+export { isString } from "./libs/isString";
+export { isRegexp } from "./libs/isRegexp";
+export { isObject } from "./libs/isObject";
+export { isNumber } from "./libs/isNumber";
+export { isNull } from "./libs/isNull";
+export { isFunction } from "./libs/isFunction";
+export { isError } from "./libs/isError";
+export { isBoolean } from "./libs/isBoolean";
+export { isArray } from "./libs/isArray";
+export { getNumberWithDec } from "./libs/getNumberWithDec";
+export { getNumberAverage } from "./libs/getNumberAverage";
+export { getNumberVariance } from "./libs/getNumberVariance";
+export { getStdDeviation } from "./libs/getStdDeviation";

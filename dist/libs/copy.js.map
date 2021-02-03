@@ -1,0 +1,1 @@
+{"version":3,"file":"copy.js","sources":["../../src/libs/copy.ts"],"sourcesContent":["/**\n * 简单复制\n * @param  item 原始数据\n * @return      复制后的数据\n */\nexport function copy<T>(item: T): T {\n    return JSON.parse(JSON.stringify(item));\n}"],"names":["item","JSON","parse","stringify"],"mappings":"0FAKwBA,GACpB,OAAOC,KAAKC,MAAMD,KAAKE,UAAUH"}

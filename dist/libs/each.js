@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./is.js");var e=require("./isFunction.js"),r=require("./isObject.js"),i=require("./isArray.js");exports.each=function(s,t,a){a=a||this;var c=e.isFunction(t);if(i.isArray(s))for(var u=0;u<s.length;u++){var l=!0;if(c&&(l=t.call(a,s[u],u)),!1===l)break}else if(r.isObject(s))for(var n=Object.keys(s),o=0;o<n.length;o++){var f=!0;if(c&&(f=t.call(a,s[n[o]],n[o])),!1===f)break}};
+//# sourceMappingURL=each.js.map

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./is.js");var e=require("./isNumber.js"),r=require("./isNull.js"),s=require("./isUndefined.js");exports.numberFormat=function(i,u,t){if(!e.isNumber(i))return"0";(s.isUndefined(u)||r.isNull(u))&&(u=","),e.isNumber(t)||(t=3);var n=t,b=(i=i.toString()).indexOf("."),o="";for(-1===b?b=i.length:o=i.substr(b),"-"===i.charAt(0)&&n++;b>n;)b-=t,o=u+i.substr(b,t)+o;return b&&(o=i.substr(0,b)+o),o};
+//# sourceMappingURL=numberFormat.js.map
