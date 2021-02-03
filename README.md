@@ -89,7 +89,7 @@
     - `subject` 待判断的数据
 
 
-- __`toArray<T>(args: T[]): Array<T>`__
+- __`toArray<T>(args: any[]): Array<T>`__
 
     伪数组转成数组
     - `args` 伪数组对象
@@ -176,14 +176,14 @@
     - `dec` 精度
 
 
-- __`gettNumberAverage(arr:number[], dec:number): number`__
+- __`getNumberAverage(arr:number[], dec:number): number`__
 
     获取一组数组中的平均数
     - `arr` 待处理数组
     - `dec` 保留精度
 
 
-- __`gettNumberVariance(arr:number[], dec:number): number`__
+- __`getNumberVariance(arr:number[], dec:number): number`__
 
     按照指定格式将日期对象或时间戳转化为日期字符串
     - `arr` 待处理数组
