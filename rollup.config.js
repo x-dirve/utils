@@ -7,8 +7,6 @@ const fs = require("fs");
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-console.log(process.env.NODE_ENV);
-
 const libPath = join(cwd, "src", "libs")
 const libFilesList = fs.readdirSync(libPath).map(file => join(libPath, file));
 
@@ -58,7 +56,6 @@ const indexConfig = {
             "objectHashIgnoreUnknownHack": true
         })
         , buble()
-        , isProduction && terser()
     ]
 }
 
