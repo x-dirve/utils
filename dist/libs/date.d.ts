@@ -10,4 +10,4 @@ export { FORMAT_REGEXP };
  * @param  offset 修正偏移的秒数
  * @return        日期
  */
-export declare function date(date: any, format?: string, offset?: number): string;
+export default function date(date: any, format?: string, offset?: number): string;

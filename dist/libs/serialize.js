@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.serialize=function(e,t){return void 0===t&&(t=!1),Object.keys(e).map((function(n){return n+"="+(t?encodeURIComponent(e[n]):e[n])})).join("&")};
+function n(n,e){return void 0===e&&(e=!1),Object.keys(n).map((function(o){return o+"="+(e?encodeURIComponent(n[o]):n[o])})).join("&")}export default n;
 //# sourceMappingURL=serialize.js.map

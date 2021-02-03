@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./is.js");exports.isObject=function(t){return e.default(t,"object")};
+import t from"./is.js";function o(o){return t(o,"object")}export default o;
 //# sourceMappingURL=isObject.js.map

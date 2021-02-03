@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isArray=function(r){return Array.isArray(r)};
+function r(r){return Array.isArray(r)}export default r;
 //# sourceMappingURL=isArray.js.map

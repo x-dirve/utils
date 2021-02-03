@@ -4,4 +4,4 @@
  * @param  handler 处理函数
  * @param  context 作用域
  */
-export declare function each(data: any[] | object, handler: Function, context?: object): void;
+export default function each(data: any[] | object, handler: Function, context?: object): void;

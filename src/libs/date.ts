@@ -1,5 +1,5 @@
-import { toDate } from "./toDate";
-import { fix0 } from "./fix0";
+import toDate from "./toDate";
+import fix0 from "./fix0";
 
 /**
  * 日期格式化格式匹配正则
@@ -14,7 +14,7 @@ export { FORMAT_REGEXP };
  * @param  offset 修正偏移的秒数
  * @return        日期
  */
-export function date(date, format?: string, offset?: number): string {
+export default function date(date, format?: string, offset?: number): string {
     format = format || "Y-m-d H:i:s";
     let timestamp = toDate(date, offset);
     if (timestamp === null) {

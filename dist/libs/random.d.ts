@@ -4,4 +4,4 @@
  * @param  min 最小范围(包含，默认 0)
  * @return     随机数
  */
-export declare function random(max: number, min: number): number;
+export default function random(max: number, min: number): number;

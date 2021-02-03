@@ -4,4 +4,4 @@
  * @param  dec 保留精度
  * @return     平均数
  */
-export declare function getNumberAverage(arr: number[], dec: number): number;
+export default function getNumberAverage(arr: number[], dec: number): number;

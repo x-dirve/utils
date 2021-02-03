@@ -1,6 +1,6 @@
-import { isFunction } from "./isFunction";
-import { isObject } from "./isObject";
-import { isArray } from "./isArray";
+import isFunction from "./isFunction";
+import isObject from "./isObject";
+import isArray from "./isArray";
 
 /**
  * 通用遍历函数
@@ -8,7 +8,7 @@ import { isArray } from "./isArray";
  * @param  handler 处理函数
  * @param  context 作用域
  */
-export function each(data: any[] | object, handler: Function, context?: object): void {
+export default function each(data: any[] | object, handler: Function, context?: object): void {
     context = context || this;
     var hasHandler = isFunction(handler);
     if (isArray(data)) {

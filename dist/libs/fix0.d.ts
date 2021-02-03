@@ -4,4 +4,4 @@
  * @param  size   格式化后出来的数字位数
  * @return        格式化结果
  */
-export declare function fix0(number: any, size: number): string;
+export default function fix0(number: any, size: number): string;

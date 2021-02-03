@@ -4,7 +4,7 @@
  * @param  size   格式化后出来的数字位数
  * @return        格式化结果
  */
-export function fix0(number, size: number): string {
+export default function fix0(number, size: number): string {
     number = number.toString();
     while ((number).length < size) {
         number = '0' + number;

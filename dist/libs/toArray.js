@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.toArray=function(e){return Array.prototype.slice.call(e)};
+function r(r){return Array.prototype.slice.call(r)}export default r;
 //# sourceMappingURL=toArray.js.map

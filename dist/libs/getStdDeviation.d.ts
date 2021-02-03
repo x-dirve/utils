@@ -4,4 +4,4 @@
  * @param  dec  保留精度
  * @return      标准差
  */
-export declare function getStdDeviation(arr: number[], dec: number): number;
+export default function getStdDeviation(arr: number[], dec: number): number;

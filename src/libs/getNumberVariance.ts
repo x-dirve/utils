@@ -1,5 +1,5 @@
-import { getNumberWithDec } from "./getNumberWithDec";
-import { getNumberAverage } from "./getNumberAverage";
+import getNumberWithDec from "./getNumberWithDec";
+import getNumberAverage from "./getNumberAverage";
 
 /**
  * 获取一组数组中的方差
@@ -7,7 +7,7 @@ import { getNumberAverage } from "./getNumberAverage";
  * @param  dec 保留精度
  * @return     方差
  */
-export function getNumberVariance(arr: number[], dec: number) {
+export default function getNumberVariance(arr: number[], dec: number) {
     var avg = getNumberAverage(arr, dec),
         i = arr.length,
         v = 0;

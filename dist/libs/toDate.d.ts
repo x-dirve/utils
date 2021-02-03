@@ -9,4 +9,4 @@ export { DATE_REGEXP };
  * @param   offset 修正偏移的秒数
  * @return         返回JS Date对象 / NULL 日期格式错误
  */
-export declare function toDate(date: any, offset?: number): any;
+export default function toDate(date: any, offset?: number): any;

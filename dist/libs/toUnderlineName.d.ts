@@ -8,4 +8,4 @@ export { UPPER_CASE_REGEXP };
  * @param  str 待处理的字符串
  * @return     处理后的字符串
  */
-export declare function toUnderlineName(str: string): string;
+export default function toUnderlineName(str: string): string;

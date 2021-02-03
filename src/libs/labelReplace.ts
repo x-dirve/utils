@@ -1,5 +1,5 @@
-import { isObject } from "./isObject";
-import { isUndefined } from "./isUndefined";
+import isObject from "./isObject";
+import isUndefined from "./isUndefined";
 
 /**
  * 带花括号标签检测正则
@@ -20,7 +20,7 @@ export { labelReplaceExp }
  * labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
  * ```
  */
-export function labelReplace<T>(tpl: string, data: T, keep: boolean = false): string {
+export default function labelReplace<T>(tpl: string, data: T, keep: boolean = false): string {
     return tpl.replace(labelReplaceExp, function (_, key) {
         const re = isObject(data) ? data[key] : data;
         if (isUndefined(re) && keep) {

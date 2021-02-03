@@ -15,10 +15,9 @@ const libConfig = {
     , "output": [
         {
             "entryFileNames": "[name].js"
-            , "format": "cjs"
+            , "format": "es"
             , "dir": join(cwd, "dist", "libs")
             , "sourcemap": true
-            , "exports": "named"
         }
     ]
     , "plugins": [

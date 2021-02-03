@@ -3,4 +3,4 @@
  * @param   args 伪数组对象
  * @return       转化后的数组
  */
-export declare function toArray<T>(args: any): Array<T>;
+export default function toArray<T>(args: any): Array<T>;

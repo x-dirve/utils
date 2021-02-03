@@ -16,4 +16,4 @@ export { labelReplaceExp };
  * labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
  * ```
  */
-export declare function labelReplace<T>(tpl: string, data: T, keep?: boolean): string;
+export default function labelReplace<T>(tpl: string, data: T, keep?: boolean): string;

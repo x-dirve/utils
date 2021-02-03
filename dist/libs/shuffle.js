@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.shuffle=function(e){for(var r=e.length-1;r>=0;r--){var t=Math.floor(Math.random()*(r+1)),o=e[t];e[t]=e[r],e[r]=o}return e};
+function r(r){for(var t=r.length-1;t>=0;t--){var a=Math.floor(Math.random()*(t+1)),o=r[a];r[a]=r[t],r[t]=o}return r}export default r;
 //# sourceMappingURL=shuffle.js.map

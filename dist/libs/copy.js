@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.copy=function(e){return JSON.parse(JSON.stringify(e))};
+function r(r){return JSON.parse(JSON.stringify(r))}export default r;
 //# sourceMappingURL=copy.js.map

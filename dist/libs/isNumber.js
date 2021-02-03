@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./is.js");exports.isNumber=function(r){return!isNaN(r)&&e.default(r,"number")};
+import r from"./is.js";function t(t){return!isNaN(t)&&r(t,"number")}export default t;
 //# sourceMappingURL=isNumber.js.map

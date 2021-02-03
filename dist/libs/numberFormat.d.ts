@@ -5,4 +5,4 @@
  * @param  size      分割位数间隔
  * @return           格式化完的字符串
  */
-export declare function numberFormat(val: any, separator: string, size: number): string;
+export default function numberFormat(val: any, separator: string, size: number): string;

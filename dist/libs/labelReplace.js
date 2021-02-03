@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("./is.js");var e=require("./isObject.js"),r=require("./isUndefined.js"),i=/\{(\w+)\}/g;exports.labelReplace=function(s,t,n){return void 0===n&&(n=!1),s.replace(i,(function(i,s){var u=e.isObject(t)?t[s]:t;return r.isUndefined(u)&&n?i:u}))},exports.labelReplaceExp=i;
+import"./is.js";import r from"./isObject.js";import t from"./isUndefined.js";var e=/\{(\w+)\}/g;function i(i,o,n){return void 0===n&&(n=!1),i.replace(e,(function(e,i){var f=r(o)?o[i]:o;return t(f)&&n?e:f}))}export default i;export{e as labelReplaceExp};
 //# sourceMappingURL=labelReplace.js.map

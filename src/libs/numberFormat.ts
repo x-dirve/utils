@@ -1,6 +1,6 @@
-import { isUndefined } from "./isUndefined";
-import { isNumber } from "./isNumber";
-import { isNull } from "./isNull";
+import isUndefined from "./isUndefined";
+import isNumber from "./isNumber";
+import isNull from "./isNull";
 
 /**
  * 按位数格式化数字
@@ -9,7 +9,7 @@ import { isNull } from "./isNull";
  * @param  size      分割位数间隔
  * @return           格式化完的字符串
  */
-export function numberFormat(val: any, separator: string, size: number) {
+export default function numberFormat(val: any, separator: string, size: number) {
     if (!isNumber(val)) {
         return "0";
     }

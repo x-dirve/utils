@@ -1,11 +1,11 @@
-import { isObject } from "./isObject";
+import isObject from "./isObject";
 
 /**
  * 合并
  * @param target  合并基准对象
  * @param sources 后续合并对象
  */
-export function merge(target: object, ...sources: any[]) {
+export default function merge(target: object, ...sources: any[]) {
     if (!sources.length) return target;
     const source: any = sources.shift();
     if (isObject(target) && isObject(source)) {

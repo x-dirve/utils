@@ -1,5 +1,5 @@
-import { isNumber } from "./isNumber";
-import { isString } from "./isString";
+import isNumber from "./isNumber";
+import isString from "./isString";
 
 /**
  * 时间分割正则
@@ -13,7 +13,7 @@ export { DATE_REGEXP };
  * @param   offset 修正偏移的秒数
  * @return         返回JS Date对象 / NULL 日期格式错误
  */
-export function toDate(date, offset?: number) {
+export default function toDate(date, offset?: number) {
     let ts;
     if (date instanceof Date) {
         ts = date;

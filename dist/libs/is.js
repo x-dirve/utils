@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=function(e,t){return Object.prototype.toString.call(e).substr(8,t.length).toLowerCase()===t};
+function t(t,e){return Object.prototype.toString.call(t).substr(8,e.length).toLowerCase()===e}export default t;
 //# sourceMappingURL=is.js.map

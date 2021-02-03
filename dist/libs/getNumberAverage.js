@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./getNumberWithDec.js");exports.getNumberAverage=function(r,t){for(var u=r.length,g=0;u--;)g+=r[u];return e.getNumberWithDec(g/r.length,t)};
+import t from"./getNumberWithDec.js";function e(e,r){for(var n=e.length,o=0;n--;)o+=e[n];return t(o/e.length,r)}export default e;
 //# sourceMappingURL=getNumberAverage.js.map

@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getNumberWithDec=function(e,t){var r=Math.pow(10,t||0);return t?Math.round(r*e)/r:e};
+function t(t,r){var a=Math.pow(10,r||0);return r?Math.round(a*t)/a:t}export default t;
 //# sourceMappingURL=getNumberWithDec.js.map

@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./is.js");exports.isRegexp=function(r){return e.default(r,"regexp")};
+import r from"./is.js";function e(e){return r(e,"regexp")}export default e;
 //# sourceMappingURL=isRegexp.js.map

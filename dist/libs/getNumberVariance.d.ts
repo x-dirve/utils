@@ -4,4 +4,4 @@
  * @param  dec 保留精度
  * @return     方差
  */
-export declare function getNumberVariance(arr: number[], dec: number): number;
+export default function getNumberVariance(arr: number[], dec: number): number;

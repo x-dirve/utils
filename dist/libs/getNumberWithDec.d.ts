@@ -4,4 +4,4 @@
  * @param  dec   精度
  * @return       处理后的数字
  */
-export declare function getNumberWithDec(num: number, dec: number): number;
+export default function getNumberWithDec(num: number, dec: number): number;

@@ -1,2 +1,2 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.queryString=function(e){return e?Object.keys(e).map((function(t){return t+"="+encodeURIComponent(e[t])})).join("&"):""};
+function n(n){return n?Object.keys(n).map((function(e){return e+"="+encodeURIComponent(n[e])})).join("&"):""}export default n;
 //# sourceMappingURL=queryString.js.map
