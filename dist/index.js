@@ -507,6 +507,36 @@ function getStdDeviation(arr, dec) {
     return getNumberWithDec(stdDev, dec);
 }
 
+/**
+ * 解析输入文本，输出带对应 kv 的对象
+ * @param str        待处理字符串
+ * @param separator  分割符号
+ * @param assignment 赋值符号
+ * @param ignore     需要排除的数据标识
+ * @param decode     是否执行 decode 操作
+ */
+function parseStr(str, separator, assignment, ignore, decode) {
+    if ( separator === void 0 ) separator = "&";
+    if ( assignment === void 0 ) assignment = "=";
+    if ( ignore === void 0 ) ignore = /^#/;
+    if ( decode === void 0 ) decode = true;
+
+    if (isString(str)) {
+        var subject = str.split(separator).reduce(function (res, part) {
+            if (ignore.test(part)) {
+                return res;
+            }
+            var partArr = part.split(assignment);
+            res[partArr[0]] = decode && !isUndefined(partArr[1]) ? decodeURIComponent(partArr[1]) : partArr[1];
+            return res;
+        }, Object.create(null));
+        return subject;
+    }
+    else {
+        return {};
+    }
+}
+
 exports.copy = copy;
 exports.date = date;
 exports.each = each;
@@ -532,6 +562,7 @@ exports.labelReplace = labelReplace;
 exports.labelReplaceExp = labelReplaceExp;
 exports.merge = merge;
 exports.numberFormat = numberFormat;
+exports.parseStr = parseStr;
 exports.queryString = queryString;
 exports.random = random;
 exports.serialize = serialize;

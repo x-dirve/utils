@@ -167,6 +167,15 @@
     - `format` 日期格式
     - `offset` 修正偏移的秒数
 
+- __`parseStr(str: string, separator: string = "&", assignment: string | RegExp = "=", ignore: RegExp = /^#/, decode: boolean = true): ParseReturn`__
+
+    解析输入文本，输出带对应 kv 的对象
+    - `str` 待处理字符串
+    - `separator` 字符串分割符号
+    - `assignment` 赋值符号
+    - `ignore` 需要排除的数据标识
+    - `decode` 是否执行 decode 操作
+
 ## 数字相关
 
 - __`getNumberWithDec(num: number, dec: number): number`__

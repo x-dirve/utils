@@ -29,3 +29,4 @@ export { default as getNumberWithDec } from "./libs/getNumberWithDec";
 export { default as getNumberAverage } from "./libs/getNumberAverage";
 export { default as getNumberVariance } from "./libs/getNumberVariance";
 export { default as getStdDeviation } from "./libs/getStdDeviation";
+export { default as parseStr } from "./libs/parseStr";
