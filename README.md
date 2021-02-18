@@ -2,6 +2,38 @@
 
 > 包含常用的类型判断、方法
 
+## 按需加载
+`@x-drive/utils` 支持基于 `babel-plugin-import` 的按需加载机制
+
+1. 项目中引入 `babel-plugin-import`,可在 `package.json` 的 `devDependencies` 中手动加入
+    ```json
+    ....
+    "devDependencies": {
+        ...
+        "babel-plugin-import": "1.13.3"
+    }
+    ...
+    ```
+    或使用 `npn install babel-plugin-import --save-dev`
+1. 修改 `babel.config.js` 文件中 `plugins` 字段，增加模块相关设置
+    ```json
+    ...
+    "plugins": [
+        [
+            "import"
+            , {
+                "libraryName": "@x-drive/utils"
+                , "libraryDirectory": "dist/libs"
+                , "camel2DashComponentName": false
+            }
+            , "@x-drive/utils"
+        ]
+    ]
+    ...
+    ```
+    如是 rollup 等工具中使用则在对应的 babel 设置中添加相应的配置
+
+
 ## 数据类型判断
 基于 `is` 扩展出各个数据类型的判断方法，用于各种数据类型的判断场景
 
@@ -205,33 +237,3 @@
     按照指定格式将日期对象或时间戳转化为日期字符串
     - `arr` 待处理数组
     - `dec` 保留精度
-
-## 按需加载
-@x-drive/utils 支持基于 `babel-plugin-import` 的按需加载机制
-
-1. 项目中引入 `babel-plugin-import`,可在 `package.json` 的 `devDependencies` 中手动加入
-    ```json
-    ....
-    "devDependencies": {
-        ...
-        "babel-plugin-import": "1.13.3"
-    }
-    ...
-    ```
-    或使用 `npn install babel-plugin-import --save-dev`
-1. 修改 `babel.config.js` 文件中 `plugins` 字段，增加模块相关设置
-    ```json
-    ...
-    "plugins": [
-        [
-            "import"
-            , {
-                "libraryName": "@x-drive/utils"
-                , "libraryDirectory": "dist/libs"
-                , "camel2DashComponentName": false
-            }
-            , "@x-drive/utils"
-        ]
-    ]
-    ...
-    ```
