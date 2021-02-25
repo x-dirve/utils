@@ -1,3 +1,10 @@
+## v1.1.4
+
+### Feat
+- feat:新增 cookie 操作 [b1e06ee](https://hub.com/x-dirve/utils/commit/b1e06ee108a83be54696cd37394c768a7086460e)
+- feat: 新增往字符串中追加参数方法 [d7c16ce](https://hub.com/x-dirve/utils/commit/d7c16ce8f850604cbb59b189adc65a12cd7e328a)
+- feat: extend 使用 rest 写法，不再使用 arguments 转成数组 [f72f355](https://hub.com/x-dirve/utils/commit/f72f35536887f15108a79eb928a387ea99a63c0f)
+
 ## v1.1.3
 
 ### Feat
