@@ -1,2 +1,2 @@
-import"./is.js";import"./isFunction.js";import"./isObject.js";import"./isArray.js";import r from"./each.js";import t from"./toArray.js";function i(){var i=t(arguments),o=i.shift();if(o){if(i.length)for(;i.length;){var s=i.shift();s&&r(s,(function(r,t){o[t]=r}))}return o}return null}export default i;
+import"./is.js";import"./isObject.js";import"./isFunction.js";import"./isArray.js";import r from"./each.js";function t(){for(var t=[],i=arguments.length;i--;)t[i]=arguments[i];var n=t.shift();if(n){if(t.length)for(;t.length;){var o=t.shift();o&&r(o,(function(r,t){n[t]=r}))}return n}return null}export default t;
 //# sourceMappingURL=extend.js.map

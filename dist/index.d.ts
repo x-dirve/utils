@@ -30,3 +30,5 @@ export { default as getNumberAverage } from "./libs/getNumberAverage";
 export { default as getNumberVariance } from "./libs/getNumberVariance";
 export { default as getStdDeviation } from "./libs/getStdDeviation";
 export { default as parseStr } from "./libs/parseStr";
+export { default as addQuery } from "./libs/addQuery";
+export { default as cookie } from "./libs/cookie";

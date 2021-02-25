@@ -129,7 +129,9 @@ function each(data, handler, context) {
  * @return 合并后的对象
  */
 function extend() {
-    var args = toArray(arguments);
+    var args = [], len = arguments.length;
+    while ( len-- ) args[ len ] = arguments[ len ];
+
     var dat = args.shift();
     if (dat) {
         if (args.length) {
@@ -537,6 +539,50 @@ function parseStr(str, separator, assignment, ignore, decode) {
     }
 }
 
+function addQuery(url, query) {
+    var extQueryStr = "";
+    if (isObject(query)) {
+        extQueryStr = serialize(query);
+    }
+    return ("" + url + (url.indexOf("?") !== -1 ? "&" : "?") + extQueryStr);
+}
+
+var EXP_STR = "Thu, 01 Jan 1970 00:00:00 GMT";
+// cookie写操作，过期时间单位(s)
+function set(name, value, config) {
+    config = extend({
+        "path": "/"
+    }, config || {});
+    var defVal = {
+        "path": "/"
+    };
+    var cookie = [(name + "=" + value)];
+    Object.keys(config).forEach(function (key) {
+        if (key === "expires" && config.expires) {
+            return cookie.push("expires=" + new Date(+new Date() + config.expires * 24 * 3600 * 1000).toUTCString());
+        }
+        cookie.push((key + "=" + (config[key] || defVal[key] || "")));
+    });
+    document.cookie = cookie.join(";");
+}
+function get(name) {
+    return document.cookie.replace(new RegExp(".*(?:^|; )" + name + "=([^;]*).*|.*"), "$1");
+}
+function remove(name, path) {
+    path = path || "/";
+    var value = get(name);
+    if (value) {
+        return document.cookie = name + "=" + value + "; expires=" + EXP_STR + "; path=" + path;
+    }
+}
+var cookie = {
+    get: get,
+    set: set,
+    remove: remove
+};
+
+exports.addQuery = addQuery;
+exports.cookie = cookie;
 exports.copy = copy;
 exports.date = date;
 exports.each = each;
