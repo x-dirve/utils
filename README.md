@@ -96,6 +96,11 @@
     是否是正则
     - `subject` 待判断的数据
 
+- __`isAsyncFunction(subject: any): boolean`__
+
+    是否 async 声明的异步函数
+    - `subject` 待判断的数据
+
 ## 常用方法
 包含开发过程中遇到的各种与平台无关的函数、正则
 

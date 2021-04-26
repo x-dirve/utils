@@ -535,35 +535,55 @@ function parseStr(str, separator, assignment, ignore, decode) {
     }
 }
 
+/**只有一个问号结尾 */
+var IS_QM_ONLY_REGEXP = /\?$/;
+/**
+ * 往 url 中附加参数
+ * @param url   目标 url
+ * @param query 需要附加的参数
+ */
 function addQuery(url, query) {
     var extQueryStr = "";
     if (isObject(query)) {
         extQueryStr = serialize(query);
     }
-    return ("" + url + (url.indexOf("?") !== -1 ? "&" : "?") + extQueryStr);
+    return ("" + url + (url.indexOf("?") !== -1 ? IS_QM_ONLY_REGEXP.test(url) ? "" : "&" : "?") + extQueryStr);
 }
 
+/**过期 */
 var EXP_STR = "Thu, 01 Jan 1970 00:00:00 GMT";
-// cookie写操作，过期时间单位(s)
+var DEF_CONFIG = {
+    "path": "/"
+};
+/**
+ * cookie写操作，过期时间单位(s)
+ * @param name   cookie key
+ * @param value  cookie value
+ * @param config cookie 配置
+ */
 function set(name, value, config) {
-    config = extend({
-        "path": "/"
-    }, config || {});
-    var defVal = {
-        "path": "/"
-    };
+    config = extend({}, DEF_CONFIG, config || {});
     var cookie = [(name + "=" + value)];
     Object.keys(config).forEach(function (key) {
         if (key === "expires" && config.expires) {
             return cookie.push("expires=" + new Date(+new Date() + config.expires * 24 * 3600 * 1000).toUTCString());
         }
-        cookie.push((key + "=" + (config[key] || defVal[key] || "")));
+        cookie.push((key + "=" + (config[key] || "")));
     });
-    document.cookie = cookie.join(";");
+    document.cookie = cookie.join("; ");
 }
+/**
+ * 获取指定的 cookie
+ * @param name cookie 名称
+ */
 function get(name) {
     return document.cookie.replace(new RegExp(".*(?:^|; )" + name + "=([^;]*).*|.*"), "$1");
 }
+/**
+ * 删除 cookie
+ * @param name 要删除的 cookie 名称
+ * @param path 生效路径
+ */
 function remove(name, path) {
     path = path || "/";
     var value = get(name);
@@ -577,5 +597,13 @@ var cookie = {
     remove: remove
 };
 
-export { addQuery, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, toArray, toDate, toUnderlineName };
+/**
+ * 是否是函数
+ * @param  subject 待判断的数据
+ */
+function isAsyncFunction(subject) {
+    return is(subject, "asyncfunction");
+}
+
+export { addQuery, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, toArray, toDate, toUnderlineName };
 //# sourceMappingURL=index.esm.js.map

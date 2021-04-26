@@ -32,3 +32,4 @@ export { default as getStdDeviation } from "./libs/getStdDeviation";
 export { default as parseStr } from "./libs/parseStr";
 export { default as addQuery } from "./libs/addQuery";
 export { default as cookie } from "./libs/cookie";
+export { default as isAsyncFunction } from "./libs/isAsyncFunction";
