@@ -1,3 +1,8 @@
+## v1.1.8
+
+### Feat
+- feat: 增加节流 throttle 方法 [b1323cb](https://hub.com/x-dirve/utils/commit/b1323cbb3bffd020829b0bbc1203586c2fb4d99b)
+
 ## v1.1.7
 
 ### Feat
