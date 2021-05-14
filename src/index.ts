@@ -33,3 +33,4 @@ export { default as parseStr } from "./libs/parseStr";
 export { default as addQuery } from "./libs/addQuery";
 export { default as cookie } from "./libs/cookie";
 export { default as isAsyncFunction } from "./libs/isAsyncFunction";
+export { default as throttle } from "./libs/throttle";

@@ -605,5 +605,24 @@ function isAsyncFunction(subject) {
     return is(subject, "asyncfunction");
 }
 
-export { addQuery, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, toArray, toDate, toUnderlineName };
+/**
+ * 节流
+ * @param fn    回调函数
+ * @param delay 延迟时间
+ */
+function throttle(fn, delay) {
+    var timer;
+    return function () {
+        var args = [], len = arguments.length;
+        while ( len-- ) args[ len ] = arguments[ len ];
+
+        var context = this;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            fn.apply(context, args);
+        }, delay);
+    };
+}
+
+export { addQuery, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
 //# sourceMappingURL=index.esm.js.map

@@ -213,6 +213,12 @@
     - `ignore` 需要排除的数据标识
     - `decode` 是否执行 decode 操作
 
+- __`throttle(fn: (...args: any[]) => void, delay: number): (...args: any[]) => void`__
+
+    节流
+    - `fn` 回调函数
+    - `delay` 延迟时间
+
 ## 数字相关
 
 - __`getNumberWithDec(num: number, dec: number): number`__
