@@ -37,66 +37,66 @@
 ## 数据类型判断
 基于 `is` 扩展出各个数据类型的判断方法，用于各种数据类型的判断场景
 
-- __`is(subject: any, type: string): boolean`__
+- **is(subject: any, type: string): boolean**
 
     数据类型判断
     - `subject` 待判断的数据
     - `type`    数据类型名字
 
-- __`isArray(subject: any): boolean`__
+- **isArray(subject: any): boolean**
 
     是否是数组
     - `subject` 待判断的数据
 
 
-- __`isObject(subject: any): boolean`__
+- **isObject(subject: any): boolean**
 
     是否是对象
     - `subject` 待判断的数据
 
 
-- __`isString(subject: any): boolean`__
+- **isString(subject: any): boolean**
 
     是否是字符串
     - `subject` 待判断的数据
 
 
-- __`isNull(subject: any): boolean`__
+- **isNull(subject: any): boolean**
 
     是否是 null
     - `subject` 待判断的数据
 
-- __`isNumber(subject: any): boolean`__
+- **isNumber(subject: any): boolean**
 
     是否是数字
     - `subject` 待判断的数据
 
-- __`isUndefined(subject: any): boolean`__
+- **isUndefined(subject: any): boolean**
 
     是否 undefined
     - `subject` 待判断的数据
 
-- __`isFunction(subject: any): boolean`__
+- **isFunction(subject: any): boolean**
 
     是否函数
     - `subject` 待判断的数据
 
-- __`isBoolean(subject: any): boolean`__
+- **isBoolean(subject: any): boolean**
 
     是否是布尔值
     - `subject` 待判断的数据
 
-- __`isError(subject: any): boolean`__
+- **isError(subject: any): boolean**
 
     是否是错误对象
     - `subject` 待判断的数据
 
-- __`isRegexp(subject: any): boolean`__
+- **isRegexp(subject: any): boolean**
 
     是否是正则
     - `subject` 待判断的数据
 
-- __`isAsyncFunction(subject: any): boolean`__
+- **isAsyncFunction(subject: any): boolean**
 
     是否 async 声明的异步函数
     - `subject` 待判断的数据
@@ -104,12 +104,12 @@
 ## 常用方法
 包含开发过程中遇到的各种与平台无关的函数、正则
 
-- __`labelReplaceExp: RegExp`__
+- **labelReplaceExp: RegExp**
     
     带花括号标签检测正则
 
 
-- __`labelReplace<T>(tpl: string, data: T, keep?: boolean): string`__
+- **labelReplace<T>(tpl: string, data: T, keep?: boolean): string**
 
     批量替换字符串中带花括号标签为指定数据
     - `tpl` 待处理的字符串
@@ -120,19 +120,19 @@
     labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
     ```
 
-- __`isValidArray(subject: any): boolean`__
+- **isValidArray(subject: any): boolean**
 
     是否是数组且长度大于0
     - `subject` 待判断的数据
 
 
-- __`toArray<T>(args: any[]): Array<T>`__
+- **toArray<T>(args: any[]): Array<T>**
 
     伪数组转成数组
     - `args` 伪数组对象
 
 
-- __`each<T>(data: T[] | object, handler: Function, context?: object): void`__
+- **each<T>(data: T[] | object, handler: Function, context?: object): void**
 
     通用遍历函数
     - `data` 待遍历数据
@@ -140,71 +140,71 @@
     - `context` 作用域
 
 
-- __`toUnderlineName(str: string): string`__
+- **toUnderlineName(str: string): string**
 
     转化为蛇形命名
     - `str` 待处理的字符串
 
 
-- __`copy<T>(item: T): T`__
+- **copy<T>(item: T): T**
 
     简单复制
     - `item` 原始数据
 
 
-- __`fix0(number: any, size: number): string`__
+- **fix0(number: any, size: number): string**
 
     格式化数字, 自动补 0
     - `number` 要格式化的数字
     - `size` 格式化后出来的数字位数
 
 
-- __`shuffle<T>(arr: T[]): T[]`__
+- **shuffle<T>(arr: T[]): T[]**
 
     数组随机分布
     - `arr` 原始数组
 
-- __`random(max: number, min: number): number`__
+- **random(max: number, min: number): number**
 
     获取包含指定范围内的随机数
     - `max` 最大范围(包含)
     - `min` 最小范围(包含，默认 0)
 
-- __`serialize(query: object, encode?: boolean): string`__
+- **serialize(query: object, encode?: boolean): string**
 
     序列化请求参数
     - `query` 参数对象
 
-- __`extend(): any`__
+- **extend(): any**
 
     对象扩展方法
     - `subject` 待判断的数据
 
-- __`merge(target: object, ...sources: any[]): any`__
+- **merge(target: object, ...sources: any[]): any**
 
     合并
     - `target` 合并基准对象
     - `sources` 后续合并对象
 
-- __`queryString(dat: object): string`__
+- **queryString(dat: object): string**
 
     请求参数对象转成请求参数字符串
     - `dat` 请求参数
 
-- __`toDate(date: any, offset?: number): any`__
+- **toDate(date: any, offset?: number): any**
 
     转换对象为JS Date对象
     - `date` <可选> 日期数据(时间戳, 字符串, Date对象, 空)
     - `offset` 修正偏移的秒数
 
-- __`date(date: any, format?: string, offset?: number): string`__
+- **date(date: any, format?: string, offset?: number): string**
 
     按照指定格式将日期对象或时间戳转化为日期字符串
     - `date` 日期对象或时间戳
     - `format` 日期格式
     - `offset` 修正偏移的秒数
 
-- __`parseStr(str: string, separator: string = "&", assignment: string | RegExp = "=", ignore: RegExp = /^#/, decode: boolean = true): ParseReturn`__
+- **parseStr(str: string, separator: string = "&", assignment: string | RegExp = "=", ignore: RegExp = /^#/, decode: boolean = true): ParseReturn**
 
     解析输入文本，输出带对应 kv 的对象
     - `str` 待处理字符串
@@ -213,29 +213,34 @@
     - `ignore` 需要排除的数据标识
     - `decode` 是否执行 decode 操作
 
-- __`throttle(fn: (...args: any[]) => void, delay: number): (...args: any[]) => void`__
+- **throttle(fn: (...args: any[]) => void, delay: number): (...args: any[]) => void**
 
     节流
     - `fn` 回调函数
     - `delay` 延迟时间
 
+- **cakk<T = any>(origin:Function): T**
+
+    将某些 js 数据类型上的原始方法转化为可直接调用的函数
+    - `origin` 需要处理的原始函数
+
 ## 数字相关
 
-- __`getNumberWithDec(num: number, dec: number): number`__
+- **getNumberWithDec(num: number, dec: number): number**
 
     浮点数字精度处理
     - `num` 待处理数字
     - `dec` 精度
 
 
-- __`getNumberAverage(arr:number[], dec:number): number`__
+- **getNumberAverage(arr:number[], dec:number): number**
 
     获取一组数组中的平均数
     - `arr` 待处理数组
     - `dec` 保留精度
 
 
-- __`getNumberVariance(arr:number[], dec:number): number`__
+- **getNumberVariance(arr:number[], dec:number): number**
 
     按照指定格式将日期对象或时间戳转化为日期字符串
     - `arr` 待处理数组
@@ -243,7 +248,7 @@
     - `offset` 修正偏移的秒数
 
 
-- __`getStdDeviation(arr:number[], dec:number): number`__
+- **getStdDeviation(arr:number[], dec:number): number**
 
     按照指定格式将日期对象或时间戳转化为日期字符串
     - `arr` 待处理数组

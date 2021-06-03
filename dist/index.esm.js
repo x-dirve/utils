@@ -624,5 +624,14 @@ function throttle(fn, delay) {
     };
 }
 
-export { addQuery, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
+/**
+ * 将某些 js 数据类型上的原始方法转化为可直接调用的函数
+ * @param origin 需要处理的原始函数
+ */
+// @ts-ignore
+function cakk(origin) {
+    return Reflect.apply(Function.prototype.bind, Function.prototype.call, arguments);
+}
+
+export { addQuery, cakk, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
 //# sourceMappingURL=index.esm.js.map
