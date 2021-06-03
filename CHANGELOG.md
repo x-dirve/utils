@@ -1,3 +1,8 @@
+## v1.1.9
+
+### Feat
+- feat: 新增将某些 js 数据类型上的原始方法转化为可直接调用的函数： cakk [103bdb0](https://hub.com/x-dirve/utils/commit/103bdb0bca070f46ee2af157f1bc6d7fc9509c50)
+
 ## v1.1.8
 
 ### Feat
