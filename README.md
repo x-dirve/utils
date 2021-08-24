@@ -101,6 +101,11 @@
     是否 async 声明的异步函数
     - `subject` 待判断的数据
 
+- **isSymbol(subject: any): boolean**
+
+    是否 Symbol
+    - `subject` 待判断的数据
+
 ## 常用方法
 包含开发过程中遇到的各种与平台无关的函数、正则
 

@@ -1,3 +1,8 @@
+## v1.1.10
+
+### Feat
+- feat: 新增 isSymbol 方法 [7674ff2](https://hub.com/x-dirve/utils/commit/7674ff20d7e94e39602f4beab7ab076c8d918daf)
+
 ## v1.1.9
 
 ### Feat
