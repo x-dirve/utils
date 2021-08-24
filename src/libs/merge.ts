@@ -6,8 +6,10 @@ import isObject from "./isObject";
  * @param sources 后续合并对象
  */
 export default function merge(target: object, ...sources: any[]) {
-    if (!sources.length) return target;
-    const source: any = sources.shift();
+    if (!sources.length) {
+        return target;
+    }
+    const source = sources.shift();
     if (isObject(target) && isObject(source)) {
         for (const key in source) {
             if (isObject(source[key])) {
