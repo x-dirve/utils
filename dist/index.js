@@ -159,8 +159,9 @@ function merge(target) {
 
     var sources = [], len = arguments.length - 1;
     while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
-    if (!sources.length)
-        { return target; }
+    if (!sources.length) {
+        return target;
+    }
     var source = sources.shift();
     if (isObject(target) && isObject(source)) {
         for (var key in source) {
@@ -459,6 +460,14 @@ function isBoolean(subject) {
 }
 
 /**
+ * 是否是 symbol 类型数据
+ * @param  subject 待判断的数据
+ */
+function isSymbol(subject) {
+    return is(subject, "symbol");
+}
+
+/**
  * 浮点数字精度处理
  * @param  num   待处理数字
  * @param  dec   精度
@@ -632,9 +641,8 @@ function throttle(fn, delay) {
  * 将某些 js 数据类型上的原始方法转化为可直接调用的函数
  * @param origin 需要处理的原始函数
  */
-// @ts-ignore
-function cakk(origin) {
-    return Reflect.apply(Function.prototype.bind, Function.prototype.call, arguments);
+function cakk(fn) {
+    return Reflect.apply(Function.prototype.bind, Function.prototype.call, [fn]);
 }
 
 exports.addQuery = addQuery;
@@ -660,6 +668,7 @@ exports.isNumber = isNumber;
 exports.isObject = isObject;
 exports.isRegexp = isRegexp;
 exports.isString = isString;
+exports.isSymbol = isSymbol;
 exports.isUndefined = isUndefined;
 exports.isValidArray = isValidArray;
 exports.labelReplace = labelReplace;

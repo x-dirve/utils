@@ -25,6 +25,7 @@ export { default as isFunction } from "./libs/isFunction";
 export { default as isError } from "./libs/isError";
 export { default as isBoolean } from "./libs/isBoolean";
 export { default as isArray } from "./libs/isArray";
+export { default as isSymbol } from "./libs/isSymbol";
 export { default as getNumberWithDec } from "./libs/getNumberWithDec";
 export { default as getNumberAverage } from "./libs/getNumberAverage";
 export { default as getNumberVariance } from "./libs/getNumberVariance";

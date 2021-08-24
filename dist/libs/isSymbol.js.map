@@ -1,0 +1,1 @@
+{"version":3,"file":"isSymbol.js","sources":["../../src/libs/isSymbol.ts"],"sourcesContent":["import is from \"./is\";\n/**\n * 是否是 symbol 类型数据\n * @param  subject 待判断的数据\n */\nexport default function isSymbol(subject: any) {\n    return is(subject, \"symbol\");\n}"],"names":["isSymbol","subject","is"],"mappings":"gCAKwBA,EAASC,GAC7B,OAAOC,EAAGD,EAAS"}
