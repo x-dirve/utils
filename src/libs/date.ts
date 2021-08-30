@@ -39,7 +39,7 @@ export default function date(date, format?: string, offset?: number): string {
             case "i": return fix0(timestamp.getMinutes(), 2);
             case "s": return fix0(timestamp.getSeconds(), 2);
             case "T": return Math.round(timestamp.getTime() / 1000);
-            case "M": return timestamp.getMilliseconds();
+            case "M": return fix0(timestamp.getMilliseconds(), 3);
         }
         return tag;
     });
