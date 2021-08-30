@@ -4,7 +4,7 @@ import fix0 from "./fix0";
 /**
  * 日期格式化格式匹配正则
  */
-const FORMAT_REGEXP = /[YymndjNwaAghGHisT]/g;
+const FORMAT_REGEXP = /[YymndjNwaAghGHisTM]/g;
 export { FORMAT_REGEXP };
 
 /**
@@ -39,6 +39,7 @@ export default function date(date, format?: string, offset?: number): string {
             case "i": return fix0(timestamp.getMinutes(), 2);
             case "s": return fix0(timestamp.getSeconds(), 2);
             case "T": return Math.round(timestamp.getTime() / 1000);
+            case "M": return timestamp.getMilliseconds();
         }
         return tag;
     });

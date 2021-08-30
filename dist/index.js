@@ -397,7 +397,7 @@ function toDate(date, offset) {
 /**
  * 日期格式化格式匹配正则
  */
-var FORMAT_REGEXP = /[YymndjNwaAghGHisT]/g;
+var FORMAT_REGEXP = /[YymndjNwaAghGHisTM]/g;
 /**
  * 按照指定格式将日期对象或时间戳转化为日期字符串
  * @param  date   日期对象或时间戳
@@ -430,6 +430,7 @@ function date(date, format, offset) {
             case "i": return fix0(timestamp.getMinutes(), 2);
             case "s": return fix0(timestamp.getSeconds(), 2);
             case "T": return Math.round(timestamp.getTime() / 1000);
+            case "M": return timestamp.getMilliseconds();
         }
         return tag;
     });
