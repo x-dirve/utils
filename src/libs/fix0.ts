@@ -7,7 +7,7 @@
 export default function fix0(number, size: number): string {
     number = number.toString();
     while ((number).length < size) {
-        number = '0' + number;
+        number = "0" + number;
     }
     return number;
 }
