@@ -35,21 +35,26 @@ function isUndefined(subject) {
 var labelReplaceExp = /\{(\w+)\}/g;
 /**
  * 批量替换字符串中带花括号标签为指定数据
- * @param  tpl  待处理的字符串
- * @param  data 替换数据
- * @param  keep 是否保留未能解析的标签
- * @return      替换后端字符串
+ * @param  tpl    待处理的字符串
+ * @param  data   替换数据
+ * @param  keep   是否保留未能解析的标签
+ * @param  remove 是否同时删除已替换的数据字段
+ * @return        替换后端字符串
  * @example
- * ```tsx
+ * ```ts
  * labelReplace('{a}/{b}/c', {a: 1, b: 2}) // 1/2/c
  * labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
  * ```
  */
-function labelReplace(tpl, data, keep) {
+function labelReplace(tpl, data, keep, remove) {
     if ( keep === void 0 ) keep = false;
+    if ( remove === void 0 ) remove = false;
 
     return tpl.replace(labelReplaceExp, function (_, key) {
         var re = isObject(data) ? data[key] : data;
+        if (remove && !isUndefined(re)) {
+            delete data[key];
+        }
         if (isUndefined(re) && keep) {
             return _;
         }
@@ -221,7 +226,7 @@ function copy(item) {
 function fix0(number, size) {
     number = number.toString();
     while ((number).length < size) {
-        number = '0' + number;
+        number = "0" + number;
     }
     return number;
 }
@@ -641,6 +646,11 @@ function throttle(fn, delay) {
 /**
  * 将某些 js 数据类型上的原始方法转化为可直接调用的函数
  * @param origin 需要处理的原始函数
+ * @example
+ * ```ts
+ * const slice = cakk(Array.prototype.slice);
+ * slice([1,2,3], -1) // [3]
+ * ```
  */
 function cakk(fn) {
     return Reflect.apply(Function.prototype.bind, Function.prototype.call, [fn]);
