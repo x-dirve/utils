@@ -14,7 +14,7 @@ type ParseReturn = { [key: string]: any };
  */
 export default function parseStr(str: string, separator: string = "&", assignment: string | RegExp = "=", ignore: RegExp = /^#/, decode: boolean = true): ParseReturn {
     if (isString(str)) {
-        const subject = str.split(separator).reduce(
+        const subject = str.replace(/^\?/, "").split(separator).reduce(
             (res, part) => {
                 if (ignore.test(part)) {
                     return res;

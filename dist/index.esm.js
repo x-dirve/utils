@@ -535,7 +535,7 @@ function parseStr(str, separator, assignment, ignore, decode) {
     if ( decode === void 0 ) decode = true;
 
     if (isString(str)) {
-        var subject = str.split(separator).reduce(function (res, part) {
+        var subject = str.replace(/^\?/, "").split(separator).reduce(function (res, part) {
             if (ignore.test(part)) {
                 return res;
             }
