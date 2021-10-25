@@ -534,7 +534,7 @@ function getStdDeviation(arr, dec) {
  */
 function parseStr(str, separator, assignment, ignore, decode) {
     if ( separator === void 0 ) separator = "&";
-    if ( assignment === void 0 ) assignment = "=";
+    if ( assignment === void 0 ) assignment = /\=(.+)/;
     if ( ignore === void 0 ) ignore = /^#/;
     if ( decode === void 0 ) decode = true;
 

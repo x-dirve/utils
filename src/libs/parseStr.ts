@@ -12,7 +12,7 @@ type ParseReturn = { [key: string]: any };
  * @param ignore     需要排除的数据标识
  * @param decode     是否执行 decode 操作
  */
-export default function parseStr(str: string, separator: string = "&", assignment: string | RegExp = "=", ignore: RegExp = /^#/, decode: boolean = true): ParseReturn {
+export default function parseStr(str: string, separator: string = "&", assignment: string | RegExp = /\=(.+)/, ignore: RegExp = /^#/, decode: boolean = true): ParseReturn {
     if (isString(str)) {
         const subject = str.replace(/^\?/, "").split(separator).reduce(
             (res, part) => {
