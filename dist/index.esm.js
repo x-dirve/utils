@@ -652,5 +652,13 @@ function cakk(fn) {
     return Reflect.apply(Function.prototype.bind, Function.prototype.call, [fn]);
 }
 
-export { addQuery, cakk, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isFunction, isNull, isNumber, isObject, isRegexp, isString, isSymbol, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
+/**
+ * 是否是可执行函数
+ * @param  fn 待判断的数据
+ */
+function isExecutable(fn) {
+    return isFunction(fn) || isAsyncFunction(fn) ? true : false;
+}
+
+export { addQuery, cakk, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isExecutable, isFunction, isNull, isNumber, isObject, isRegexp, isString, isSymbol, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
 //# sourceMappingURL=index.esm.js.map

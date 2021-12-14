@@ -656,6 +656,14 @@ function cakk(fn) {
     return Reflect.apply(Function.prototype.bind, Function.prototype.call, [fn]);
 }
 
+/**
+ * 是否是可执行函数
+ * @param  fn 待判断的数据
+ */
+function isExecutable(fn) {
+    return isFunction(fn) || isAsyncFunction(fn) ? true : false;
+}
+
 exports.addQuery = addQuery;
 exports.cakk = cakk;
 exports.cookie = cookie;
@@ -673,6 +681,7 @@ exports.isArray = isArray;
 exports.isAsyncFunction = isAsyncFunction;
 exports.isBoolean = isBoolean;
 exports.isError = isError;
+exports.isExecutable = isExecutable;
 exports.isFunction = isFunction;
 exports.isNull = isNull;
 exports.isNumber = isNumber;

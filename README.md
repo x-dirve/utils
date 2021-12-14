@@ -105,6 +105,11 @@
 
     是否 Symbol
     - `subject` 待判断的数据
+    
+- **isExecutable(fn: unknown): boolean**
+
+    是否是可执行函数
+    - `fn` 待判断的数据
 
 ## 常用方法
 包含开发过程中遇到的各种与平台无关的函数、正则

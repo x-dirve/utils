@@ -36,3 +36,4 @@ export { default as cookie } from "./libs/cookie";
 export { default as isAsyncFunction } from "./libs/isAsyncFunction";
 export { default as throttle } from "./libs/throttle";
 export { default as cakk } from "./libs/cakk";
+export { default as isExecutable } from "./libs/isExecutable";
