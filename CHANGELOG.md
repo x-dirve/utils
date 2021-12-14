@@ -1,3 +1,8 @@
+## v1.1.17
+
+### Feat
+- feat: 新增是否是可执行函数判断方法 isExecutable [ab5e928](https://github.com/x-dirve/utils/commit/ab5e928727928e43dfa1bb1ca66c387a2edb0f09)
+
 ## v1.1.13
 
 ### Feat
