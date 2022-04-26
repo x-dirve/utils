@@ -1,4 +1,5 @@
 import isObject from "./isObject";
+import isArray from "./isArray";
 
 /**
  * 合并
@@ -17,6 +18,9 @@ export default function merge(target: object, ...sources: any[]) {
                     Object.assign(target, { [key]: {} });
                 }
                 merge(target[key], source[key]);
+            } else if (isArray(source[key])) {
+                target[key] = target[key] || [];
+                target[key] = target[key].concat(source[key]);
             } else {
                 Object.assign(
                     target,

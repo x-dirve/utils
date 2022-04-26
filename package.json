@@ -1,6 +1,6 @@
 {
     "name": "@x-drive/utils",
-    "version": "1.1.17",
+    "version": "1.1.18",
     "description": "包含常用的类型判断、方法。支持基于 babel-plugin-import 的按需加载机制",
     "author": "digiaries <digiaries@hotmail.com>",
     "license": "MIT",
