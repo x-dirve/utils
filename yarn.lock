@@ -1262,10 +1262,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@x-drive/changelog@1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@x-drive/changelog/-/changelog-1.1.5.tgz#d2a7c2c8222d9495c544d40089bb5c6d8b59e099"
-  integrity sha512-Cqsl2SEGa8LAZKD0vk1sVtynDePxunW+GQgRcEQXEXN0V8Hz/wEWwSoEKrl7vyQ/mtGxLgIIzvzx2pT/FbEpIw==
+"@x-drive/changelog@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@x-drive/changelog/-/changelog-1.1.6.tgz#52183fc0eeba5992325cb6aa549a73917d636597"
+  integrity sha512-BulabgXj8zWnS3qr36XDchGNMWlPH3zKamWR1j2vc4txkrrg7VkFiRXzhSKXVolMEclC5tnlVDIJr1MNZWkapg==
   dependencies:
     chalk "4.1.0"
 
