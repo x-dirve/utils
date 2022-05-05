@@ -176,6 +176,10 @@ function merge(target) {
                 }
                 merge(target[key], source[key]);
             }
+            else if (isArray(source[key])) {
+                target[key] = target[key] || [];
+                target[key] = target[key].concat(source[key]);
+            }
             else {
                 Object.assign(target, ( obj$1 = {}, obj$1[key] = source[key], obj$1 ));
             }
@@ -664,11 +668,28 @@ function isExecutable(fn) {
     return isFunction(fn) || isAsyncFunction(fn) ? true : false;
 }
 
+/**
+ * 延迟一段时间执行方法
+ * @param  fn   执行函数
+ * @param  wait 延迟时间
+ * @param  ext  要传递给延迟执行函数的参数
+ * @return      计时器 id
+ */
+function delay(fn, wait) {
+    var ext = [], len = arguments.length - 2;
+    while ( len-- > 0 ) ext[ len ] = arguments[ len + 2 ];
+
+    return setTimeout(function () {
+        return fn.apply(null, ext);
+    }, wait);
+}
+
 exports.addQuery = addQuery;
 exports.cakk = cakk;
 exports.cookie = cookie;
 exports.copy = copy;
 exports.date = date;
+exports.delay = delay;
 exports.each = each;
 exports.extend = extend;
 exports.fix0 = fix0;

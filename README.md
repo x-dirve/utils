@@ -234,6 +234,13 @@
     将某些 js 数据类型上的原始方法转化为可直接调用的函数
     - `origin` 需要处理的原始函数
 
+- **delay(fn: Function, wait: number, ...ext: any[])**
+
+    延迟一段时间执行方法
+    - `fn`   执行函数
+    - `wait` 延迟时间
+    - `ext`  要传递给延迟执行函数的参数
+
 ## 数字相关
 
 - **getNumberWithDec(num: number, dec: number): number**

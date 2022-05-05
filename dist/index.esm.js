@@ -172,6 +172,10 @@ function merge(target) {
                 }
                 merge(target[key], source[key]);
             }
+            else if (isArray(source[key])) {
+                target[key] = target[key] || [];
+                target[key] = target[key].concat(source[key]);
+            }
             else {
                 Object.assign(target, ( obj$1 = {}, obj$1[key] = source[key], obj$1 ));
             }
@@ -660,5 +664,21 @@ function isExecutable(fn) {
     return isFunction(fn) || isAsyncFunction(fn) ? true : false;
 }
 
-export { addQuery, cakk, cookie, copy, date, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isExecutable, isFunction, isNull, isNumber, isObject, isRegexp, isString, isSymbol, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
+/**
+ * 延迟一段时间执行方法
+ * @param  fn   执行函数
+ * @param  wait 延迟时间
+ * @param  ext  要传递给延迟执行函数的参数
+ * @return      计时器 id
+ */
+function delay(fn, wait) {
+    var ext = [], len = arguments.length - 2;
+    while ( len-- > 0 ) ext[ len ] = arguments[ len + 2 ];
+
+    return setTimeout(function () {
+        return fn.apply(null, ext);
+    }, wait);
+}
+
+export { addQuery, cakk, cookie, copy, date, delay, each, extend, fix0, getNumberAverage, getNumberVariance, getNumberWithDec, getStdDeviation, is, isArray, isAsyncFunction, isBoolean, isError, isExecutable, isFunction, isNull, isNumber, isObject, isRegexp, isString, isSymbol, isUndefined, isValidArray, labelReplace, labelReplaceExp, merge, numberFormat, parseStr, queryString, random, serialize, shuffle, throttle, toArray, toDate, toUnderlineName };
 //# sourceMappingURL=index.esm.js.map
