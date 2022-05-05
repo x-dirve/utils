@@ -1,3 +1,21 @@
+## v1.1.19
+
+### Feat
+- feat(delay): 新增延迟一段时间执行方法 [61b6b9b](https://github.com/x-dirve/utils/commit/61b6b9b529746a601de149b2cc9532ca480810a3)
+- feat(labelReplace): 支持同时删除已匹配的数据 [0990dff](https://github.com/x-dirve/utils/commit/0990dffdee5dbef4099b65f75f13a1c4ef2b98fb)
+- feat(date): 新增毫秒显示支持 [996a07f](https://github.com/x-dirve/utils/commit/996a07f52a712deaca6c29c59e9f82bd3eabbdd1)
+
+### Fix
+- fix: merge 在处理数组时采用合并而不是替换 [fa906cc](https://github.com/x-dirve/utils/commit/fa906ccf3a084fcd7f9491604438136d6921544a)
+- fix(parseStr): 修复当值中出现 = 时值被错误截取的问题 [0de27f9](https://github.com/x-dirve/utils/commit/0de27f9e1fb0096f3712beac7e33b95a7df7d675)
+- fix(parseStr): 修复第一个问号没有被处理掉的问题 [bccb4fc](https://github.com/x-dirve/utils/commit/bccb4fcb6c8100ce95a5b01caa0e2c1337bffe2c)
+- fix(date): 毫秒数补齐3位数显示 [4b3703e](https://github.com/x-dirve/utils/commit/4b3703e4a63b92363df98f763f7edcf5dbb4a0a1)
+
+### Chore
+- chore: release v1.1.13 [4e9dedd](https://github.com/x-dirve/utils/commit/4e9deddaefd4fb992771bbf74b65418ab90d19b8)
+- chore: 修改代码样式，修改 cakk 注释 [8091e97](https://github.com/x-dirve/utils/commit/8091e972ab4a6c5a27257493f674c897c217033a)
+- chore: 更新 changelog 版本 [0fc9c79](https://github.com/x-dirve/utils/commit/0fc9c79ba7cc6f890c39c2b0f50cb5eb9c6fbc6c)
+
 ## v1.1.17
 
 ### Feat
