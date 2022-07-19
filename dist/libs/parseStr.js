@@ -1,2 +1,0 @@
-import"./is.js";import e from"./isString.js";import t from"./isUndefined.js";function i(i,r,o,n,d){return void 0===r&&(r="&"),void 0===o&&(o=/\=(.+)/),void 0===n&&(n=/^#/),void 0===d&&(d=!0),e(i)?i.replace(/^\?/,"").split(r).reduce((function(e,i){if(n.test(i))return e;var r=i.split(o);return e[r[0]]=d&&!t(r[1])?decodeURIComponent(r[1]):r[1],e}),Object.create(null)):{}}export default i;
-//# sourceMappingURL=parseStr.js.map

@@ -1,2 +1,0 @@
-import"./is.js";import r from"./isObject.js";import t from"./isArray.js";function i(o){for(var n,s,a=[],e=arguments.length-1;e-- >0;)a[e]=arguments[e+1];if(!a.length)return o;var f=a.shift();if(r(o)&&r(f))for(var c in f)r(f[c])?(o[c]||Object.assign(o,((n={})[c]={},n)),i(o[c],f[c])):t(f[c])?(o[c]=o[c]||[],o[c]=o[c].concat(f[c])):Object.assign(o,((s={})[c]=f[c],s));return i.apply(void 0,[o].concat(a))}export default i;
-//# sourceMappingURL=merge.js.map

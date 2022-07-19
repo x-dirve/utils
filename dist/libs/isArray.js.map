@@ -1,1 +1,0 @@
-{"version":3,"file":"isArray.js","sources":["../../src/libs/isArray.ts"],"sourcesContent":["/**\n * 是否是数组\n * @param  subject 待判断的数据\n */\nexport default function isArray(subject: any) {\n    return Array.isArray(subject);\n}\n"],"names":["isArray","subject","Array"],"mappings":"SAIwBA,EAAQC,GAC5B,OAAOC,MAAMF,QAAQC"}

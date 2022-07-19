@@ -1,1 +1,0 @@
-{"version":3,"file":"isUndefined.js","sources":["../../src/libs/isUndefined.ts"],"sourcesContent":["import is from \"./is\";\n\n/**\n * 是否 undefined\n * @param  subject 待判断的数据\n */\nexport default function isUndefined(subject: any) {\n    return is(subject, \"undefined\");\n}"],"names":["isUndefined","subject","is"],"mappings":"gCAMwBA,EAAYC,GAChC,OAAOC,EAAGD,EAAS"}
