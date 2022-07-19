@@ -1,1 +1,0 @@
-{"version":3,"file":"isFunction.js","sources":["../../src/libs/isFunction.ts"],"sourcesContent":["import is from \"./is\";\n\n/**\n * 是否是函数\n * @param  subject 待判断的数据\n */\nexport default function isFunction(subject: any) {\n    return is(subject, \"function\");\n}"],"names":["isFunction","subject","is"],"mappings":"gCAMwBA,EAAWC,GAC/B,OAAOC,EAAGD,EAAS"}

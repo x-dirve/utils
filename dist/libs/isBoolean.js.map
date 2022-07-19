@@ -1,1 +1,0 @@
-{"version":3,"file":"isBoolean.js","sources":["../../src/libs/isBoolean.ts"],"sourcesContent":["import is from \"./is\";\n\n/**\n * 是否是布尔值\n * @param  subject 待判断的数据\n */\nexport default function isBoolean(subject: any) {\n    return is(subject, \"boolean\");\n}"],"names":["isBoolean","subject","is"],"mappings":"gCAMwBA,EAAUC,GAC9B,OAAOC,EAAGD,EAAS"}

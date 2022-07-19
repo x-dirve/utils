@@ -1,1 +1,0 @@
-{"version":3,"file":"isAsyncFunction.js","sources":["../../src/libs/isAsyncFunction.ts"],"sourcesContent":["import is from \"./is\";\n\n/**\n * 是否是函数\n * @param  subject 待判断的数据\n */\nexport default function isAsyncFunction(subject: any) {\n    return is(subject, \"asyncfunction\");\n}"],"names":["isAsyncFunction","subject","is"],"mappings":"gCAMwBA,EAAgBC,GACpC,OAAOC,EAAGD,EAAS"}
