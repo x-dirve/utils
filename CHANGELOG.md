@@ -1,3 +1,15 @@
+## v1.1.21
+
+### Feat
+- feat: 增加 sleep 方法，修改部分方法的 types [a53f134](https://github.com/x-dirve/utils/commit/a53f134918133dbf8f9bde891fc576ae61ab3878)
+
+### Build
+- build: 将 dist 目录加入屏蔽列表 [a8dfcea](https://github.com/x-dirve/utils/commit/a8dfcea81d7b3f28a4e7d089b9f944a701424d76)
+- build: 删除 dist [8665657](https://github.com/x-dirve/utils/commit/8665657b6c56b3f531a37a7d1ed18b68cd138e97)
+
+### Chore
+- chore: 更新版本及依赖 [6b9f112](https://github.com/x-dirve/utils/commit/6b9f112f841f3a0654838561878f89a81284cb9b)
+
 ## v1.1.19
 
 ### Feat
