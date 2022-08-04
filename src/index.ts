@@ -38,3 +38,4 @@ export { default as throttle } from "./libs/throttle";
 export { default as cakk } from "./libs/cakk";
 export { default as isExecutable } from "./libs/isExecutable";
 export { default as delay } from "./libs/delay";
+export { default as sleep } from "./libs/sleep";

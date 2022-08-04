@@ -241,6 +241,12 @@
     - `wait` 延迟时间
     - `ext`  要传递给延迟执行函数的参数
 
+- **sleep(time: any, logger: any)**
+
+    休眠指定时间或随机时间
+    - `time`   指定时间或随机时间
+    - `logger` 日志模块
+
 ## 数字相关
 
 - **getNumberWithDec(num: number, dec: number): number**

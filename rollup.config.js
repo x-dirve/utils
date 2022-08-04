@@ -27,10 +27,14 @@ const libConfig = {
                     "declarationDir": "./dist"
                 }
             }
-            ,"objectHashIgnoreUnknownHack": true
+            , "objectHashIgnoreUnknownHack": true
             , "useTsconfigDeclarationDir": true
         })
-        , buble()
+        , buble({
+            "transforms": {
+                "asyncAwait": false
+            }
+        })
         , isProduction && terser()
     ]
 }
@@ -54,7 +58,11 @@ const indexConfig = {
         typescript({
             "objectHashIgnoreUnknownHack": true
         })
-        , buble()
+        , buble({
+            "transforms": {
+                "asyncAwait": false
+            }
+        })
     ]
 }
 

@@ -9,12 +9,36 @@ export { FORMAT_REGEXP };
 
 /**
  * 按照指定格式将日期对象或时间戳转化为日期字符串
- * @param  date   日期对象或时间戳
+ * @param  date   时间戳
  * @param  format 日期格式
  * @param  offset 修正偏移的秒数
  * @return        日期
  */
-export default function date(date, format?: string, offset?: number): string {
+function date(date: number, format?: string, offset?: number): string
+/**
+ * 按照指定格式将日期对象或时间戳转化为日期字符串
+ * @param  date   日期字符串
+ * @param  format 日期格式
+ * @param  offset 修正偏移的秒数
+ * @return        日期
+ */
+function date(date: string, format?: string, offset?: number): string
+/**
+ * 按照指定格式将日期对象或时间戳转化为日期字符串
+ * @param  date   日期对象
+ * @param  format 日期格式
+ * @param  offset 修正偏移的秒数
+ * @return        日期
+ */
+function date(date: Date, format?: string, offset?: number): string
+/**
+ * 按照指定格式将日期对象或时间戳转化为日期字符串
+ * @param  date   日期对象、时间戳、日期字符串
+ * @param  format 日期格式
+ * @param  offset 修正偏移的秒数
+ * @return        日期
+ */
+function date(date: any, format?: any, offset?: any): string {
     format = format || "Y-m-d H:i:s";
     let timestamp = toDate(date, offset);
     if (timestamp === null) {
@@ -44,3 +68,4 @@ export default function date(date, format?: string, offset?: number): string {
         return tag;
     });
 }
+export default date;
