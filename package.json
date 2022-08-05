@@ -1,6 +1,6 @@
 {
     "name": "@x-drive/utils",
-    "version": "1.1.21",
+    "version": "1.1.22",
     "description": "包含常用的类型判断、方法。支持基于 babel-plugin-import 的按需加载机制",
     "author": "digiaries <digiaries@hotmail.com>",
     "license": "MIT",
@@ -61,7 +61,7 @@
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-typescript2": "^0.24.3",
         "ts-jest": "26.4.0",
-        "typescript": "^3.8.3",
+        "typescript": "^4.7.4",
         "rollup-plugin-terser": "7.0.2",
         "cross-env": "6.0.3"
     }
