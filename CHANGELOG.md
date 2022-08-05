@@ -1,3 +1,8 @@
+## v1.1.22
+
+### Fix
+- fix: sleep 的 looger 不再作为必传参数，升级依赖模块解决 ts1005 问题 [8339b96](https://github.com/x-dirve/utils/commit/8339b963db556700969dea24e3530bcc45bdf78a)
+
 ## v1.1.21
 
 ### Feat
