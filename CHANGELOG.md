@@ -1,3 +1,8 @@
+## v1.1.23
+
+### Fix
+- fix(labelReplace): 修复标签前后有空格的时候匹配不到的问题 [bf152f0](https://github.com/x-dirve/utils/commit/bf152f0da9e4f0423ae2b79075a28232ed679498)
+
 ## v1.1.22
 
 ### Fix
