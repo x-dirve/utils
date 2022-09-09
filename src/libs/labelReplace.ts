@@ -5,7 +5,7 @@ import isUndefined from "./isUndefined";
  * 带花括号标签检测正则
  * @type {RegExp}
  */
-const labelReplaceExp: RegExp = /\{(\w+)\}/g
+const labelReplaceExp: RegExp = /\{([\w\s]+)\}/g
 export { labelReplaceExp }
 
 /**
@@ -21,10 +21,11 @@ export { labelReplaceExp }
  * labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
  * ```
  */
-export default function labelReplace<T>(tpl: string, data: T, keep: boolean = false, remove:boolean = false): string {
-    return tpl.replace(labelReplaceExp, function (_, key) {
+export default function labelReplace<T>(tpl: string, data: T, keep: boolean = false, remove: boolean = false): string {
+    return tpl.replace(labelReplaceExp, function (_, key: string) {
+        key = key.trim();
         const re = isObject(data) ? data[key] : data;
-        if (remove &&!isUndefined(re)) {
+        if (remove && !isUndefined(re)) {
             delete data[key];
         }
         if (isUndefined(re) && keep) {
