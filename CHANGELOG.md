@@ -1,3 +1,8 @@
+## v1.1.24
+
+### Feat
+- feat: 增加小数点补充 0 至保留位数、小驼峰转化为连字符命名、首字大写等方法，类库中的正则转移至 regepxs 模块中，调整一些模块的 types 定义，修改说明文档格式 [b9055f6](https://github.com/x-dirve/utils/commit/b9055f6c1cd45ec374f91ebfd64686e7d8d578d4)
+
 ## v1.1.23
 
 ### Fix
