@@ -7,16 +7,13 @@
 
 1. 项目中引入 `babel-plugin-import`,可在 `package.json` 的 `devDependencies` 中手动加入
     ```json
-    ....
     "devDependencies": {
         "babel-plugin-import": "1.13.3"
     }
-    ...
     ```
     或使用 `npn install babel-plugin-import --save-dev`
 1. 修改 `babel.config.js` 文件中 `plugins` 字段，增加模块相关设置
     ```json
-    ...
     "plugins": [
         [
             "import"
@@ -28,7 +25,6 @@
             , "@x-drive/utils"
         ]
     ]
-    ...
     ```
     如是 rollup 等工具中使用则在对应的 babel 设置中添加相应的配置
 
