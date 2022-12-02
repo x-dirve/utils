@@ -1,11 +1,7 @@
+import { FORMAT_REGEXP } from "./regexps";
 import toDate from "./toDate";
 import fix0 from "./fix0";
 
-/**
- * 日期格式化格式匹配正则
- */
-const FORMAT_REGEXP = /[YymndjNwaAghGHisTM]/g;
-export { FORMAT_REGEXP };
 
 /**
  * 按照指定格式将日期对象或时间戳转化为日期字符串

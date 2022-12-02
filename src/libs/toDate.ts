@@ -1,11 +1,6 @@
+import { DATE_REGEXP } from "./regexps";
 import isNumber from "./isNumber";
 import isString from "./isString";
-
-/**
- * 时间分割正则
- */
-const DATE_REGEXP = /[^\d]+/;
-export { DATE_REGEXP };
 
 /**
  * 转换对象为JS Date对象

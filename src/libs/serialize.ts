@@ -6,5 +6,5 @@
 export default function serialize(query: object, encode: boolean = false): string {
     return Object.keys(query)
         .map(key => `${key}=${encode ? encodeURIComponent(query[key]) : query[key]}`)
-        .join('&');
+        .join("&");
 }

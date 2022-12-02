@@ -1,12 +1,8 @@
-import isObject from "./isObject";
+import { labelReplaceExp } from "./regexps";
 import isUndefined from "./isUndefined";
+import isObject from "./isObject";
 
-/**
- * 带花括号标签检测正则
- * @type {RegExp}
- */
-const labelReplaceExp: RegExp = /\{([\w\s]+)\}/g
-export { labelReplaceExp }
+export { labelReplaceExp };
 
 /**
  * 批量替换字符串中带花括号标签为指定数据

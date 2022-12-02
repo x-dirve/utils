@@ -1,4 +1,4 @@
-export { labelReplaceExp, default as labelReplace } from "./libs/labelReplace";
+export { default as labelReplace } from "./libs/labelReplace";
 export { default as isValidArray } from "./libs/isValidArray";
 export { default as toArray } from "./libs/toArray";
 export { default as each } from "./libs/each";
@@ -39,3 +39,7 @@ export { default as cakk } from "./libs/cakk";
 export { default as isExecutable } from "./libs/isExecutable";
 export { default as delay } from "./libs/delay";
 export { default as sleep } from "./libs/sleep";
+export { default as fixFloat0 } from "./libs/fixFloat0";
+export { default as toHyphenName } from "./libs/toHyphenName";
+export { default as upCaseFirstChar } from "./libs/upCaseFirstChar";
+export { UPPER_CASE_REGEXP, labelReplaceExp, IS_QM_ONLY_REGEXP, FORMAT_REGEXP, DATE_REGEXP } from "./libs/regexps";

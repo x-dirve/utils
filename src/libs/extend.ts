@@ -13,7 +13,7 @@ export default function extend(...args) {
                 if (item) {
                     each(item, function (val, key) {
                         dat[key] = val;
-                    })
+                    });
                 }
             }
         }
