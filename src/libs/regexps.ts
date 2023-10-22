@@ -26,3 +26,7 @@ export { FORMAT_REGEXP };
  */
 const DATE_REGEXP = /[^\d]+/;
 export { DATE_REGEXP };
+
+/**蛇形命名匹配正则 */
+const SNAKE_TO_CAMEL_REGEXP = /_([a-z])/g;
+export { SNAKE_TO_CAMEL_REGEXP };

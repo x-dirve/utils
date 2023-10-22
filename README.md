@@ -136,6 +136,9 @@ labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
 转化为蛇形命名
 - `str` 待处理的字符串
 
+#### snakeToCamel(str: string): string
+蛇形转小驼峰
+- `str` 待处理的字符串
 
 #### copy<T>(item: T): T
 简单复制
@@ -238,6 +241,14 @@ labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
 首字大写
 - `str` 待处理的字符串
 
+#### ready(timeout?: number): Promise<Boolean>
+添加页面可操作后的处理逻辑
+- `timeout` 等待超时时间
+
+#### copyToClipboard(text: string): Promise<boolean>
+复制到剪切板
+- `text` 待处理的字符串
+
 ## 正则
 
 #### labelReplaceExp: RegExp    
@@ -254,6 +265,9 @@ labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
 
 #### DATE_REGEXP: RegExp
 时间分割正则
+
+#### SNAKE_TO_CAMEL_REGEXP: RegExp
+蛇形命名匹配正则
 
 ## 数字相关
 

@@ -41,5 +41,8 @@ export { default as delay } from "./libs/delay";
 export { default as sleep } from "./libs/sleep";
 export { default as fixFloat0 } from "./libs/fixFloat0";
 export { default as toHyphenName } from "./libs/toHyphenName";
+export { default as ready } from "./libs/ready";
 export { default as upCaseFirstChar } from "./libs/upCaseFirstChar";
+export { default as copyToClipboard } from "./libs/copyToClipboard";
+export { default as snakeToCamel } from "./libs/snakeToCamel";
 export { UPPER_CASE_REGEXP, labelReplaceExp, IS_QM_ONLY_REGEXP, FORMAT_REGEXP, DATE_REGEXP } from "./libs/regexps";
