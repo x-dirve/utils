@@ -1,3 +1,8 @@
+## v1.1.25
+
+### Feat
+- feat: 增加复制到剪切板、蛇形转小驼峰、添加页面可操作后的处理逻辑三个方法 [77b3bc9](https://github.com/x-dirve/utils/commit/77b3bc9591f0f1e60b1373f36a381b227a959a0f)
+
 ## v1.1.24
 
 ### Feat
