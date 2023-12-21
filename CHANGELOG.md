@@ -1,3 +1,11 @@
+## v1.1.26
+
+### Chore
+- chore: 更新版本号 [f2c40da](https://github.com/x-dirve/utils/commit/f2c40da0c225859e629073ec81e32007820ac7f7)
+
+### Feat
+- feat: 增加 toYuan 分转元(人民币)、numberToStrWithRank 格式化数字为带计数单位的字符串 两个方法 [975a1e6](https://github.com/x-dirve/utils/commit/975a1e6b085e3ab7ea258b6434db757e74f8d697)
+
 ## v1.1.25
 
 ### Feat
