@@ -45,4 +45,6 @@ export { default as ready } from "./libs/ready";
 export { default as upCaseFirstChar } from "./libs/upCaseFirstChar";
 export { default as copyToClipboard } from "./libs/copyToClipboard";
 export { default as snakeToCamel } from "./libs/snakeToCamel";
+export { default as toYuan } from "./libs/toYuan";
+export { default as numberToStrWithRank } from "./libs/numberToStrWithRank";
 export { UPPER_CASE_REGEXP, labelReplaceExp, IS_QM_ONLY_REGEXP, FORMAT_REGEXP, DATE_REGEXP } from "./libs/regexps";
