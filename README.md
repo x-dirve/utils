@@ -233,10 +233,6 @@ labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
 - `num` 待处理的数字
 - `size` 保留位数
 
-#### toHyphenName(str: string): string
-小驼峰转化为连字符命名
-- `str` 待处理的字符串
-
 #### upCaseFirstChar(str: string): string
 首字大写
 - `str` 待处理的字符串
@@ -248,6 +244,20 @@ labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
 #### copyToClipboard(text: string): Promise<boolean>
 复制到剪切板
 - `text` 待处理的字符串
+
+#### toYuan(val: string | number, precision?: number): string | number
+分转元(人民币)
+- `val` 原始金额
+- `lv` 转化等级
+- `precision` 保留小数点精度
+
+####  numberToStrWithRank(val: number, precision?: number, lv?: number[], rank?: string[], konly?: boolean): string
+格式化数字为带计数单位的字符串
+- `val` 要格式化的数字
+- `precision` 要保留的小数点位数
+- `lv` 计数单位分界列表
+- `rank` 计数单位名称列表
+- `konly` 是否只返回第一个等级
 
 ## 正则
 
@@ -284,13 +294,13 @@ labelReplace('{a}/{b}/c', {a: 1}, true) // 1/{b}/c
 
 
 #### getNumberVariance(arr:number[], dec:number): number
-按照指定格式将日期对象或时间戳转化为日期字符串
+获取一组数组中的方差
 - `arr` 待处理数组
 - `dec` 保留精度
 - `offset` 修正偏移的秒数
 
 
 #### getStdDeviation(arr:number[], dec:number): number
-按照指定格式将日期对象或时间戳转化为日期字符串
+获取一组数组中的标准差
 - `arr` 待处理数组
 - `dec` 保留精度
