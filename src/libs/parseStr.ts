@@ -1,9 +1,6 @@
 import isUndefined from "./isUndefined";
 import isString from "./isString";
 
-/**返回数据 */
-type ParseReturn = { [key: string]: any };
-
 /**
  * 解析输入文本，输出带对应 kv 的对象
  * @param str        待处理字符串
@@ -12,7 +9,7 @@ type ParseReturn = { [key: string]: any };
  * @param ignore     需要排除的数据标识
  * @param decode     是否执行 decode 操作
  */
-export default function parseStr(str: string, separator: string = "&", assignment: string | RegExp = /\=(.+)/, ignore: RegExp = /^#/, decode: boolean = true): ParseReturn {
+export default function parseStr<R = Record<string, any>>(str: string, separator: string = "&", assignment: string | RegExp = /\=(.+)/, ignore: RegExp = /^#/, decode: boolean = true): R {
     if (isString(str)) {
         const subject = str.replace(/^\?/, "").split(separator).reduce(
             (res, part) => {
@@ -27,6 +24,6 @@ export default function parseStr(str: string, separator: string = "&", assignmen
         );
         return subject;
     } else {
-        return {};
+        return {} as R;
     }
 }
