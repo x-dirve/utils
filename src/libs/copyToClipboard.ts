@@ -22,6 +22,8 @@ async function copyToClipboard(text: string) {
             input.select();
             document.execCommand("copy");
             document.body.removeChild(input);
+            // @ts-ignore
+            input = null;
             res(true);
         })
     } else {
