@@ -1,3 +1,8 @@
+## v1.1.28
+
+### Fix
+- fix: 复制到剪切板功能支持非 https 环境 [c9399cf](https://github.com/x-dirve/utils/commit/c9399cf44f2e7695f52aa04e520b4d35fe693db4)
+
 ## v1.1.26
 
 ### Chore
