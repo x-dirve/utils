@@ -1,34 +1,70 @@
+import isString from "./isString";
+
+/**去除一些可能导致 DOMException PARSE ERROR 的字符*/
+function sanitizeContent(content: string) {
+    content = content.replace(/[\x00-\x1F\x7F-\x9F]/g, "");
+    return content;
+}
+
+/**尝试使用备用方案复制内容 */
+function tryFallbackCopy(content: string) {
+    try {
+        if (document.execCommand) {
+            let input = document.createElement("textarea");
+            input.value = content;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("copy");
+            document.body.removeChild(input);
+            return true;
+        }
+    } catch (e) {
+        console.error(e);
+    }
+    return false;
+}
+
 /**
  * 复制到剪切板
  * @param text 待写入剪切板的内容
  */
 async function copyToClipboard(text: string) {
-    if (navigator.clipboard) {
-        return navigator.clipboard.writeText(text)
-            .then(() => {
-                return true;
-            })
-            .catch(() => {
-                return false;
+    if (!text) {
+        return false;
+    }
+    let hasPermission = true;
+    try {
+        if (navigator.permissions) {
+            const permissionStatus = await navigator.permissions.query({
+                // @ts-ignore
+                "name": "clipboard-write"
             });
-    } else if (document.execCommand) {
-        return new Promise<boolean>(res => {
-            let input = document.createElement("textarea"); // 使用textarea文本才能换行
-            // 设置内容
-            input.value = text;
-            // 添加临时实例
-            document.body.appendChild(input);
-            // 选择实例内容
-            input.select();
-            document.execCommand("copy");
-            document.body.removeChild(input);
-            // @ts-ignore
-            input = null;
-            res(true);
-        })
-    } else {
-        return Promise.reject(new Error("不支持当前环境, 请确定运行的浏览器类型及版本"));
-    }    
+            if (
+                permissionStatus.state !== "granted" &&
+                permissionStatus.state !== "prompt"
+            ) {
+                hasPermission = false;
+            }
+        }
+    } catch (_) {
+        hasPermission = false;
+    }
+    try {
+        if (navigator.clipboard && hasPermission) {
+            await navigator.clipboard.writeText(
+                sanitizeContent(text)
+            );
+            return true;
+        } else {
+            return tryFallbackCopy(text);
+        }
+    } catch (e) {
+        if (e && isString(e.message) && e.message.toLowerCase().startsWith("write permission denied")) {
+            return tryFallbackCopy(text);;
+        } else {
+            console.error(e);
+        }
+    }
+    return false;
 }
-
 export default copyToClipboard;

@@ -1,4 +1,3 @@
-import { UPPER_CASE_REGEXP } from "./regexps";
 import isString from "./isString";
 
 
@@ -9,7 +8,9 @@ import isString from "./isString";
  */
 export default function toUnderlineName(str: string): string {
     if (isString(str)) {
-        return str.replace(UPPER_CASE_REGEXP, (m, i) => `${i ? '_' : ''}${m.toLowerCase()}`);
+        return str.replace(/([a-z0-9])([A-Z])/g, "$1_$2")
+            .replace(/([A-Z])([A-Z][a-z])/g, "$1_$2")
+            .toLowerCase();;
     }
     return str;
 }
