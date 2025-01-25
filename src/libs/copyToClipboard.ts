@@ -26,11 +26,15 @@ function tryFallbackCopy(content: string) {
 
 /**
  * 复制到剪切板
- * @param text 待写入剪切板的内容
+ * @param text              待写入剪切板的内容
+ * @param useExecCommand    是否直接使用 execCommand 复制
  */
-async function copyToClipboard(text: string) {
+async function copyToClipboard(text: string, useExecCommand = false) {
     if (!text) {
         return false;
+    }
+    if (useExecCommand) {
+        return tryFallbackCopy(text);
     }
     let hasPermission = true;
     try {
@@ -60,7 +64,7 @@ async function copyToClipboard(text: string) {
         }
     } catch (e) {
         if (e && isString(e.message) && e.message.toLowerCase().startsWith("write permission denied")) {
-            return tryFallbackCopy(text);;
+            return tryFallbackCopy(text);
         } else {
             console.error(e);
         }
